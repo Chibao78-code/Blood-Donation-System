@@ -30,11 +30,10 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(u => u.Role)
             .IsRequired();
 
-        // Indexes
+        // truy vấn 
         builder.HasIndex(u => u.Username).IsUnique();
         builder.HasIndex(u => u.Email).IsUnique();
 
-        // Relationships
         builder.HasOne(u => u.MedicalCenter)
             .WithMany(m => m.Staff)
             .HasForeignKey(u => u.MedicalCenterId)

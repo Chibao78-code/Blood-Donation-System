@@ -11,7 +11,6 @@ public class UnitOfWork : IUnitOfWork
     private IDbContextTransaction? _transaction;
     private bool _disposed;
 
-    // Repository instances
     private IRepository<User>? _users;
     private IRepository<Donor>? _donors;
     private IRepository<MedicalCenter>? _medicalCenters;
@@ -29,7 +28,6 @@ public class UnitOfWork : IUnitOfWork
         _context = context;
     }
 
-    // Repository properties with lazy initialization
     public IRepository<User> Users => _users ??= new Repository<User>(_context);
     public IRepository<Donor> Donors => _donors ??= new Repository<Donor>(_context);
     public IRepository<MedicalCenter> MedicalCenters => _medicalCenters ??= new Repository<MedicalCenter>(_context);

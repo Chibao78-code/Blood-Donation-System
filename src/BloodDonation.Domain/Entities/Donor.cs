@@ -2,44 +2,55 @@ using BloodDonation.Domain.Common;
 
 namespace BloodDonation.Domain.Entities;
 
-public class Donor : BaseEntity
+public class Donor : BaseEntity  
 {
-    public required string FullName { get; set; }
+    public string FullName { get; set; } = "";
     public DateTime? DateOfBirth { get; set; }
-    public string? Gender { get; set; }
+    public string? Gender { get; set; }  
     public string? PhoneNumber { get; set; }
     public string? Address { get; set; }
-    public string? IdentificationNumber { get; set; } // CCCD/CMND
+    public string? IdentificationNumber { get; set; } // cccd
+    
     public bool IsAvailable { get; set; } = true;
-    public int TotalDonations { get; set; } = 0;
+    public int TotalDonations { get; set; }
     public DateTime? LastDonationDate { get; set; }
-    
-    // Foreign keys
+
     public int UserId { get; set; }
+    public User User { get; set; }
+    
     public int? BloodTypeId { get; set; }
+    public BloodType? BloodType { get; set; }
     
-    // Navigation properties
-    public virtual User User { get; set; } = null!;
-    public virtual BloodType? BloodType { get; set; }
-    public virtual ICollection<DonationAppointment> DonationAppointments { get; set; } = new List<DonationAppointment>();
-    public virtual ICollection<HealthSurvey> HealthSurveys { get; set; } = new List<HealthSurvey>();
-    public virtual ICollection<DonationCertificate> DonationCertificates { get; set; } = new List<DonationCertificate>();
+    public List<DonationAppointment> DonationAppointments { get; set; }
+    public List<HealthSurvey> HealthSurveys { get; set; } 
+    public List<DonationCertificate> DonationCertificates { get; set; }
     
-    // Business Logic Methods
+    public Donor()
+    {
+        DonationAppointments = new List<DonationAppointment>();
+        HealthSurveys = new List<HealthSurvey>();
+        DonationCertificates = new List<DonationCertificate>();
+    }
+    
     public bool CanDonateBlood()
     {
-        if (!LastDonationDate.HasValue) return true;
-        
-        var daysSinceLastDonation = (DateTime.Now - LastDonationDate.Value).Days;
-        return daysSinceLastDonation >= 84; // 12 weeks = 84 days
+        // check xem da du 84 ngay chua
+        if (LastDonationDate == null) 
+            return true;
+            
+        var days = (DateTime.Now - LastDonationDate.Value).Days;
+        return days >= 84;  // 12 tuan
     }
     
     public int GetDaysUntilNextDonation()
     {
-        if (!LastDonationDate.HasValue) return 0;
+        if(!LastDonationDate.HasValue) 
+            return 0;
         
-        var nextDonationDate = LastDonationDate.Value.AddDays(84);
-        var daysRemaining = (nextDonationDate - DateTime.Now).Days;
-        return daysRemaining > 0 ? daysRemaining : 0;
+        var nextDate = LastDonationDate.Value.AddDays(84);
+        var remaining = (nextDate - DateTime.Now).Days;
+        
+        if(remaining < 0) return 0;
+        return remaining;
     }
 }

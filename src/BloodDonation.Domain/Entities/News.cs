@@ -12,5 +12,5 @@ public class News : BaseEntity
     public bool IsPublished { get; set; } = false;
     public DateTime? PublishedAt { get; set; }
     public int ViewCount { get; set; } = 0;
-    public string Type { get; set; } = "news"; // news, blog, announcement
+    public string Type { get; set; } = "news"; // news, blog
 }

@@ -31,12 +31,11 @@ public class DonationAppointmentConfiguration : IEntityTypeConfiguration<Donatio
         builder.Property(d => d.CancellationReason)
             .HasMaxLength(500);
 
-        // Indexes
+        // truy vấn 
         builder.HasIndex(d => d.AppointmentDate);
         builder.HasIndex(d => d.Status);
         builder.HasIndex(d => new { d.DonorId, d.AppointmentDate });
 
-        // Relationships
         builder.HasOne(d => d.Donor)
             .WithMany(donor => donor.DonationAppointments)
             .HasForeignKey(d => d.DonorId)

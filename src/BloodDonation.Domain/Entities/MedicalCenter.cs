@@ -14,8 +14,7 @@ public class MedicalCenter : BaseEntity
     public bool IsActive { get; set; } = true;
     public TimeSpan? OpeningTime { get; set; }
     public TimeSpan? ClosingTime { get; set; }
-    
-    // Navigation properties
+
     public virtual ICollection<User> Staff { get; set; } = new List<User>();
     public virtual ICollection<DonationAppointment> DonationAppointments { get; set; } = new List<DonationAppointment>();
     public virtual ICollection<BloodRequest> BloodRequests { get; set; } = new List<BloodRequest>();

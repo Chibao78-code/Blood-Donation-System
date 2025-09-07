@@ -9,10 +9,8 @@ public class Notification : BaseEntity
     public string Type { get; set; } = "Info"; // Info, Warning, Success, Error
     public bool IsRead { get; set; } = false;
     public DateTime? ReadAt { get; set; }
-    
-    // Foreign keys
+
     public int UserId { get; set; }
-    
-    // Navigation properties
+
     public virtual User User { get; set; } = null!;
 }

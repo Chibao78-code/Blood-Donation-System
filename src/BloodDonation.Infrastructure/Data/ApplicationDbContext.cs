@@ -8,42 +8,42 @@ namespace BloodDonation.Infrastructure.Data;
 
 public class ApplicationDbContext : DbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
     }
 
-    // DbSets
-    public DbSet<User> Users => Set<User>();
-    public DbSet<Donor> Donors => Set<Donor>();
-    public DbSet<MedicalCenter> MedicalCenters => Set<MedicalCenter>();
-    public DbSet<BloodType> BloodTypes => Set<BloodType>();
-    public DbSet<DonationAppointment> DonationAppointments => Set<DonationAppointment>();
-    public DbSet<HealthSurvey> HealthSurveys => Set<HealthSurvey>();
-    public DbSet<DonationCertificate> DonationCertificates => Set<DonationCertificate>();
-    public DbSet<BloodRequest> BloodRequests => Set<BloodRequest>();
-    public DbSet<BloodInventory> BloodInventories => Set<BloodInventory>();
-    public DbSet<Notification> Notifications => Set<Notification>();
-    public DbSet<News> News => Set<News>();
+    public DbSet<User> Users { get; set; }
+    public DbSet<Donor> Donors { get; set; }
+    public DbSet<MedicalCenter> MedicalCenters { get; set; }
+    public DbSet<BloodType> BloodTypes { get; set; }
+    public DbSet<DonationAppointment> DonationAppointments { get; set; }
+    public DbSet<HealthSurvey> HealthSurveys { get; set; }
+    public DbSet<DonationCertificate> DonationCertificates { get; set; }
+    public DbSet<BloodRequest> BloodRequests { get; set; }
+    public DbSet<BloodInventory> BloodInventories { get; set; }
+    public DbSet<Notification> Notifications { get; set; }
+    public DbSet<News> News { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
-        // Apply all configurations from the assembly
+        
+        // load 
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-        // Global query filter for soft delete
+        
+        //  add thêm nếu cần thiết 
+        
+        // chi lay record chua bi xoa
         foreach (var entityType in modelBuilder.Model.GetEntityTypes())
         {
             if (typeof(BaseEntity).IsAssignableFrom(entityType.ClrType))
             {
-                var parameter = Expression.Parameter(entityType.ClrType, "e");
-                var property = Expression.Property(parameter, nameof(BaseEntity.IsDeleted));
+                var param = Expression.Parameter(entityType.ClrType, "e");
+                var prop = Expression.Property(param, nameof(BaseEntity.IsDeleted));
                 var filter = Expression.Lambda(
-                    Expression.Equal(property, Expression.Constant(false)),
-                    parameter);
-                
+                    Expression.Equal(prop, Expression.Constant(false)),
+                    param);
+                    
                 modelBuilder.Entity(entityType.ClrType).HasQueryFilter(filter);
             }
         }
