@@ -3,12 +3,52 @@
   "WorkspaceRootPath": "C:\\GitHub\\Blood-Donation-System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F2107851-3A29-472E-9529-565A36929FBB}|src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.infrastructure\\migrations\\20250906140859_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2107851-3A29-472E-9529-565A36929FBB}|src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj|solutionrelative:src\\blooddonation.infrastructure\\migrations\\20250906140859_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2107851-3A29-472E-9529-565A36929FBB}|src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.infrastructure\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2107851-3A29-472E-9529-565A36929FBB}|src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj|solutionrelative:src\\blooddonation.infrastructure\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\blooddonation.web.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\blooddonation.web.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\blooddonation.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\blooddonation.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F2107851-3A29-472E-9529-565A36929FBB}|src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.infrastructure\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,12 +71,12 @@
       "RelativeMoniker": "D:0:0:{F2107851-3A29-472E-9529-565A36929FBB}|src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj|solutionrelative:src\\blooddonation.infrastructure\\data\\configurations\\donationappointmentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F2107851-3A29-472E-9529-565A36929FBB}|src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.infrastructure\\blooddonation.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{F2107851-3A29-472E-9529-565A36929FBB}|src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj|solutionrelative:src\\blooddonation.infrastructure\\blooddonation.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,28 +115,20 @@
       "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\entities\\donor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\entities\\donationcertificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\entities\\donationcertificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\entities\\bloodtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\entities\\bloodtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\entities\\bloodinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\entities\\bloodinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\entities\\donationappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\entities\\donationappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\entities\\bloodtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\entities\\bloodtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\entities\\bloodrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\entities\\bloodrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\blooddonation.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\blooddonation.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8E2E9FB5-E04C-4156-BF7F-717A89F7F395}|src\\BloodDonation.Application\\BloodDonation.Application.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.application\\blooddonation.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -107,26 +139,6 @@
       "RelativeMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|solutionrelative:src\\blooddonation.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|solutionrelative:src\\blooddonation.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.api\\blooddonation.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|solutionrelative:src\\blooddonation.api\\blooddonation.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|solutionrelative:src\\blooddonation.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -135,24 +147,44 @@
       "RelativeMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|solutionrelative:src\\blooddonation.api\\blooddonation.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|solutionrelative:src\\blooddonation.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|solutionrelative:src\\blooddonation.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.api\\blooddonation.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|solutionrelative:src\\blooddonation.api\\blooddonation.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.api\\blooddonation.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EB891FE6-2843-40E3-BFC1-8917CF2422CB}|src\\BloodDonation.API\\BloodDonation.API.csproj|solutionrelative:src\\blooddonation.api\\blooddonation.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\entities\\donationcertificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\entities\\donationcertificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\entities\\donationappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\entities\\donationappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.domain\\entities\\bloodrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0755AAD8-C80F-4664-B537-F41D2EE1A7B1}|src\\BloodDonation.Domain\\BloodDonation.Domain.csproj|solutionrelative:src\\blooddonation.domain\\entities\\bloodrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|c:\\github\\blood-donation-system\\src\\blooddonation.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{69F488B3-0E01-45C4-A8F3-98BEE69B5A55}|src\\BloodDonation.Web\\BloodDonation.Web.csproj|solutionrelative:src\\blooddonation.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -162,7 +194,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -173,388 +205,24 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Properties\\launchSettings.json",
-              "RelativeToolTip": "src\\BloodDonation.Web\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-06T14:10:28.894Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:54:12.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserConfiguration.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\Configurations\\UserConfiguration.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Data\\Configurations\\UserConfiguration.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\Configurations\\UserConfiguration.cs",
-              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Data\\Configurations\\UserConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:54:09.253Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "DonationAppointmentConfiguration.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\Configurations\\DonationAppointmentConfiguration.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Data\\Configurations\\DonationAppointmentConfiguration.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\Configurations\\DonationAppointmentConfiguration.cs",
-              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Data\\Configurations\\DonationAppointmentConfiguration.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:54:04.189Z",
-              "EditorCaption": ""
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "src\\BloodDonation.Web\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T07:16:21.684Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Interfaces\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Interfaces\\IUnitOfWork.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Interfaces\\IUnitOfWork.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Interfaces\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:53:56.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Repositories\\Repository.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Repositories\\Repository.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Repositories\\Repository.cs",
-              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Repositories\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:51:32.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Repositories\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Repositories\\UnitOfWork.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Repositories\\UnitOfWork.cs",
-              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Repositories\\UnitOfWork.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:51:34.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "src\\BloodDonation.Web\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T08:19:36.509Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BloodDonation.Infrastructure",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj",
-              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-06T13:53:54.679Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Interfaces\\IRepository.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Interfaces\\IRepository.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Interfaces\\IRepository.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Interfaces\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:53:53.414Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\User.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\User.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:53:44.456Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Notification.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\Notification.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\Notification.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\Notification.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\Notification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:53:34.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "News.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\News.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\News.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\News.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\News.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:53:31.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "HealthSurvey.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\HealthSurvey.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\HealthSurvey.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\HealthSurvey.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\HealthSurvey.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:53:21.063Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Donor.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\Donor.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\Donor.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\Donor.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\Donor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:52:54.458Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DonationCertificate.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\DonationCertificate.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\DonationCertificate.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\DonationCertificate.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\DonationCertificate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:52:52.22Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "BloodInventory.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodInventory.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\BloodInventory.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodInventory.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\BloodInventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:52:02.31Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AppointmentStatus.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Enums\\AppointmentStatus.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Enums\\AppointmentStatus.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Enums\\AppointmentStatus.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Enums\\AppointmentStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T08:19:21.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserRole.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Enums\\UserRole.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Enums\\UserRole.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Enums\\UserRole.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Enums\\UserRole.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T08:19:22.562Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "DonationAppointment.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\DonationAppointment.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\DonationAppointment.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\DonationAppointment.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\DonationAppointment.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA/wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:52:45.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "BloodRequest.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodRequest.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\BloodRequest.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodRequest.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\BloodRequest.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:52:36.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "BloodDonation.Application",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Application\\BloodDonation.Application.csproj",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Application\\BloodDonation.Application.csproj",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Application\\BloodDonation.Application.csproj",
-              "RelativeToolTip": "src\\BloodDonation.Application\\BloodDonation.Application.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-06T13:51:54.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "MedicalCenter.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\MedicalCenter.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\MedicalCenter.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\MedicalCenter.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\MedicalCenter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:51:22.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\Program.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.API\\Program.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\Program.cs",
-              "RelativeToolTip": "src\\BloodDonation.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T13:51:47.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "src\\BloodDonation.API\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\Properties\\launchSettings.json",
-              "RelativeToolTip": "src\\BloodDonation.API\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-06T13:51:42.978Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "BloodDonation.API",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\BloodDonation.API.csproj",
-              "RelativeDocumentMoniker": "src\\BloodDonation.API\\BloodDonation.API.csproj",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\BloodDonation.API.csproj",
-              "RelativeToolTip": "src\\BloodDonation.API\\BloodDonation.API.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-06T13:51:39.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "BloodType.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodType.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\BloodType.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodType.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\BloodType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T08:19:18.347Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "BaseEntity.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Common\\BaseEntity.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Common\\BaseEntity.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Common\\BaseEntity.cs",
-              "RelativeToolTip": "src\\BloodDonation.Domain\\Common\\BaseEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T08:19:15.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "src\\BloodDonation.Web\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-05T08:19:46.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Views\\Home\\Index.cshtml",
@@ -566,55 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "src\\BloodDonation.Web\\Models\\ErrorViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T08:19:33.475Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\appsettings.json",
-              "RelativeDocumentMoniker": "src\\BloodDonation.API\\appsettings.json",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\appsettings.json",
-              "RelativeToolTip": "src\\BloodDonation.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-05T08:19:07.812Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "BloodDonation.API.http",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\BloodDonation.API.http",
-              "RelativeDocumentMoniker": "src\\BloodDonation.API\\BloodDonation.API.http",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\BloodDonation.API.http",
-              "RelativeToolTip": "src\\BloodDonation.API\\BloodDonation.API.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-09-05T08:19:05.48Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "src\\BloodDonation.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-05T08:19:01.796Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 5,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Views\\_ViewImports.cshtml",
@@ -626,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 4,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Views\\_ViewStart.cshtml",
@@ -638,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\appsettings.json",
               "RelativeDocumentMoniker": "src\\BloodDonation.Web\\appsettings.json",
@@ -650,19 +270,498 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Program.cs",
               "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Program.cs",
               "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Program.cs",
               "RelativeToolTip": "src\\BloodDonation.Web\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-05T08:18:46.451Z"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T07:15:34.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250906140859_InitialCreate.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Migrations\\20250906140859_InitialCreate.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Migrations\\20250906140859_InitialCreate.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Migrations\\20250906140859_InitialCreate.cs",
+              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Migrations\\20250906140859_InitialCreate.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBEAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T07:15:06.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "src\\BloodDonation.Web\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T08:19:33.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "src\\BloodDonation.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T08:19:36.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BloodDonation.Web",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\BloodDonation.Web.csproj",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\BloodDonation.Web.csproj",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\BloodDonation.Web.csproj",
+              "RelativeToolTip": "src\\BloodDonation.Web\\BloodDonation.Web.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-07T07:16:06.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BloodDonation.Web.csproj",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\BloodDonation.Web.csproj",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\BloodDonation.Web.csproj",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\BloodDonation.Web.csproj",
+              "RelativeToolTip": "src\\BloodDonation.Web\\BloodDonation.Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-07T07:16:01.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DonationAppointmentConfiguration.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\Configurations\\DonationAppointmentConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Data\\Configurations\\DonationAppointmentConfiguration.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\Configurations\\DonationAppointmentConfiguration.cs",
+              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Data\\Configurations\\DonationAppointmentConfiguration.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:54:04.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BloodDonation.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj",
+              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\BloodDonation.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-06T13:53:54.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA9wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:53:56.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Repositories\\Repository.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Repositories\\Repository.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAywAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:51:32.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:51:34.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Interfaces\\IRepository.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Interfaces\\IRepository.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Interfaces\\IRepository.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Interfaces\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:53:53.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Enums\\UserRole.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Enums\\UserRole.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Enums\\UserRole.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Enums\\UserRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T08:19:22.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\Configurations\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Data\\Configurations\\UserConfiguration.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\Configurations\\UserConfiguration.cs",
+              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Data\\Configurations\\UserConfiguration.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:54:09.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "src\\BloodDonation.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:54:12.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AppointmentStatus.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Enums\\AppointmentStatus.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Enums\\AppointmentStatus.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Enums\\AppointmentStatus.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Enums\\AppointmentStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T08:19:21.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:53:44.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\Notification.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\Notification.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\Notification.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\Notification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:53:34.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "News.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\News.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\News.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\News.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\News.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:53:31.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MedicalCenter.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\MedicalCenter.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\MedicalCenter.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\MedicalCenter.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\MedicalCenter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:51:22.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "HealthSurvey.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\HealthSurvey.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\HealthSurvey.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\HealthSurvey.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\HealthSurvey.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:53:21.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Donor.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\Donor.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\Donor.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\Donor.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\Donor.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA2wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:52:54.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "BloodType.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodType.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\BloodType.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodType.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\BloodType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T08:19:18.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "BloodInventory.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodInventory.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\BloodInventory.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodInventory.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\BloodInventory.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA3wAYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:52:02.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Common\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Common\\BaseEntity.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Common\\BaseEntity.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Common\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T08:19:15.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "BloodDonation.Domain.csproj",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\BloodDonation.Domain.csproj",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\BloodDonation.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-07T07:14:03.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.API\\Program.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\Program.cs",
+              "RelativeToolTip": "src\\BloodDonation.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:51:47.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\BloodDonation.API\\appsettings.json",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\appsettings.json",
+              "RelativeToolTip": "src\\BloodDonation.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-05T08:19:07.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "BloodDonation.API.http",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\BloodDonation.API.http",
+              "RelativeDocumentMoniker": "src\\BloodDonation.API\\BloodDonation.API.http",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\BloodDonation.API.http",
+              "RelativeToolTip": "src\\BloodDonation.API\\BloodDonation.API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-09-05T08:19:05.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "src\\BloodDonation.API\\appsettings.Development.json",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\appsettings.Development.json",
+              "RelativeToolTip": "src\\BloodDonation.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-07T07:12:50.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "BloodDonation.API",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\BloodDonation.API.csproj",
+              "RelativeDocumentMoniker": "src\\BloodDonation.API\\BloodDonation.API.csproj",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\BloodDonation.API.csproj",
+              "RelativeToolTip": "src\\BloodDonation.API\\BloodDonation.API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-06T13:51:39.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "BloodDonation.Application.csproj",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Application\\BloodDonation.Application.csproj",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Application\\BloodDonation.Application.csproj",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Application\\BloodDonation.Application.csproj",
+              "RelativeToolTip": "src\\BloodDonation.Application\\BloodDonation.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-06T13:51:54.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "BloodDonation.API.csproj",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\BloodDonation.API.csproj",
+              "RelativeDocumentMoniker": "src\\BloodDonation.API\\BloodDonation.API.csproj",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\BloodDonation.API.csproj",
+              "RelativeToolTip": "src\\BloodDonation.API\\BloodDonation.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-07T07:12:26.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Properties\\launchSettings.json",
+              "RelativeToolTip": "src\\BloodDonation.Web\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-06T14:10:28.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "src\\BloodDonation.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "src\\BloodDonation.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-06T13:51:42.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "DonationCertificate.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\DonationCertificate.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\DonationCertificate.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\DonationCertificate.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\DonationCertificate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:52:52.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "DonationAppointment.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\DonationAppointment.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\DonationAppointment.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\DonationAppointment.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\DonationAppointment.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA/wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:52:45.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "BloodRequest.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodRequest.cs",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Domain\\Entities\\BloodRequest.cs",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\Entities\\BloodRequest.cs",
+              "RelativeToolTip": "src\\BloodDonation.Domain\\Entities\\BloodRequest.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T13:52:36.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "src\\BloodDonation.Web\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-05T08:19:46.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "src\\BloodDonation.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "src\\BloodDonation.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-05T08:19:01.796Z"
+            },
+            {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         },
