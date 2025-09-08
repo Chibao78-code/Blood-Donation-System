@@ -1,0 +1,116 @@
+@model BloodDonation.Application.DTOs.RegisterDto
+@{
+    ViewData["Title"] = "Đăng ký";
+    Layout = "_Layout";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">Đăng ký tài khoản</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Register" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Username" class="form-label">Tên đăng nhập *</label>
+                                <input asp-for="Username" class="form-control" />
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Email" class="form-label">Email *</label>
+                                <input asp-for="Email" type="email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FullName" class="form-label">Họ và tên *</label>
+                            <input asp-for="FullName" class="form-control" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="PhoneNumber" class="form-label">Số điện thoại</label>
+                            <input asp-for="PhoneNumber" class="form-control" placeholder="VD: 0912345678" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Password" class="form-label">Mật khẩu *</label>
+                                <input asp-for="Password" type="password" class="form-control" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ConfirmPassword" class="form-label">Xác nhận mật khẩu *</label>
+                                <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                Tôi đồng ý với <a href="#" class="text-danger">điều khoản sử dụng</a>
+                            </label>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-danger">Đăng ký</button>
+                        </div>
+
+                        <hr />
+
+                        <div class="text-center">
+                            <p>Đã có tài khoản? <a asp-action="Login" class="text-danger">Đăng nhập</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(function() {
+            $('#Username').on('blur', function() {
+                var username = $(this).val();
+                if(username) {
+                    $.get('@Url.Action("CheckUsername", "Account")', { username: username }, function(data) {
+                        if(!data) {
+                            $('#Username').addClass('is-invalid');
+                            $('#Username').next('.text-danger').text('Tên đăng nhập đã tồn tại');
+                        } else {
+                            $('#Username').removeClass('is-invalid');
+                            $('#Username').next('.text-danger').text('');
+                        }
+                    });
+                }
+            });
+
+            $('#Email').on('blur', function() {
+                var email = $(this).val();
+                if(email) {
+                    $.get('@Url.Action("CheckEmail", "Account")', { email: email }, function(data) {
+                        if(!data) {
+                            $('#Email').addClass('is-invalid');
+                            $('#Email').next('.text-danger').text('Email đã được sử dụng');
+                        } else {
+                            $('#Email').removeClass('is-invalid');
+                            $('#Email').next('.text-danger').text('');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
