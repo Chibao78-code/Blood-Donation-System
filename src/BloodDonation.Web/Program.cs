@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using BloodDonation.Infrastructure.Data;
 using BloodDonation.Domain.Interfaces;
 using BloodDonation.Infrastructure.Repositories;
+using BloodDonation.Application.Interfaces;
+using BloodDonation.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IDonationService, DonationService>();
+
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
@@ -20,10 +25,6 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-
-var app = builder.Build();
-
-if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     
