@@ -1687,6 +1687,10 @@
       "BloodDonation.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "BloodDonation.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.0"
+        },
         "compile": {
           "bin/placeholder/BloodDonation.Application.dll": {}
         },
