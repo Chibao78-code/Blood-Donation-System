@@ -19,14 +19,30 @@ public class DonationService : IDonationService
 
     public async Task<(bool Success, string Message, int? AppointmentId)> BookAppointmentAsync(BookAppointmentDto dto)
     {
+        // kiem tra donor
         var donor = await _unitOfWork.Donors.GetByIdAsync(dto.DonorId);
         if (donor == null)
-            return (false, "Không tìm thấy thông tin người hiến máu", null);
+        {
+            //Console.WriteLine($"[DEBUG] Donor not found: {dto.DonorId}");
+            return (false, "Ko tim thay thong tin. Check lai di", null);
+        }
 
+        // check xem dc hien chua
         if (!donor.CanDonateBlood())
         {
             var daysLeft = donor.GetDaysUntilNextDonation();
-            return (false, $"Bạn cần chờ thêm {daysLeft} ngày nữa mới có thể hiến máu", null);
+            // FIXME: tinh toan ngay khong chinh xac 100%
+            return (false, $"Chua du 3 thang. Con {daysLeft} ngay nua nhe!", null);
+        }
+        
+        // check tuoi - tam thoi hard code
+        if (donor.DateOfBirth != null) 
+        {
+            var age = DateTime.Now.Year - donor.DateOfBirth.Value.Year;
+            if(age < 18 || age > 60) {
+                // TODO: thong bao ro hon
+                return (false, "Tuoi khong phu hop (18-60)", null);
+            }
         }
 
         var existingAppointment = await _unitOfWork.DonationAppointments

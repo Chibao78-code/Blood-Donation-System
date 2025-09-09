@@ -20,18 +20,24 @@ public class AuthService : IAuthService
 
     public async Task<(bool Success, string Message, UserDto? User)> LoginAsync(LoginDto loginDto)
     {
+        // tim user theo username
         var user = await _unitOfWork.Users
             .Query()
             .FirstOrDefaultAsync(u => u.Username == loginDto.Username);
 
         if (user == null)
-            return (false, "Tài khoản không tồn tại.", null);
+            return (false, "Sai tên đăng nhập hoặc mật khẩu", null);  // ko nen bao la username sai
 
+        // check pwd
         if (!VerifyPassword(loginDto.Password, user.PasswordHash, user.PasswordSalt ?? ""))
-            return (false, "Mật khẩu không đúng.", null);
+        {
+            // TODO: log failed login attempt
+            //await LogFailedLogin(user.Id);
+            return (false, "Sai tên đăng nhập hoặc mật khẩu", null);
+        }
 
         if (!user.IsActive)
-            return (false, "Tài khoản đã bị khóa.", null);
+            return (false, "Tài khoản bị khóa rồi. Liên hệ admin nhé", null);
 
         user.LastLoginAt = DateTime.UtcNow;
         await _unitOfWork.Users.UpdateAsync(user);
