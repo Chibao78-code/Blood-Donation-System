@@ -24,7 +24,9 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
 
     public async Task<IEnumerable<T>> GetAllAsync()
     {
-        return await _dbSet.ToListAsync();
+        // get all records - be careful with large tables!
+        var result= await _dbSet.ToListAsync();
+        return result;
     }
 
     public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
@@ -57,6 +59,7 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
 
     public async Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null)
     {
+        // dem so record
         return predicate == null 
             ? await _dbSet.CountAsync()
             : await _dbSet.CountAsync(predicate);
@@ -64,7 +67,7 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
 
     public async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate)
     {
-        return await _dbSet.AnyAsync(predicate);
+        return await _dbSet.AnyAsync(predicate);  //check ton tai
     }
 
     public IQueryable<T> Query()

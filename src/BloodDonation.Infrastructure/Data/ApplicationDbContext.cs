@@ -15,14 +15,19 @@ public class ApplicationDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Donor> Donors { get; set; }
     public DbSet<MedicalCenter> MedicalCenters { get; set; }
-    public DbSet<BloodType> BloodTypes { get; set; }
+    public DbSet<BloodType> BloodTypes { get; set; }  // A+, A-, B+,... 
     public DbSet<DonationAppointment> DonationAppointments { get; set; }
     public DbSet<HealthSurvey> HealthSurveys { get; set; }
     public DbSet<DonationCertificate> DonationCertificates { get; set; }
+    
+    // yeu cau mau tu benh vien
     public DbSet<BloodRequest> BloodRequests { get; set; }
-    public DbSet<BloodInventory> BloodInventories { get; set; }
+    public DbSet<BloodInventory> BloodInventories { get; set; }  // kho mau
+    
     public DbSet<Notification> Notifications { get; set; }
-    public DbSet<News> News { get; set; }
+    public DbSet<News> News { get; set; }  // tin tuc, thong bao
+    
+    // TODO: them bang BloodDonationEvent cho su kien hien mau
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
