@@ -1,8 +1,124 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Trang chủ";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">Hi</a>.</p>
+    <div class="jumbotron bg-light p-5 rounded">
+        <h1 class="display-4">Hệ thống Quản lý Hiến máu</h1>
+        <p class="lead">Kết nối những trái tim nhân ái - Lan tỏa sự sống</p>
+        <hr class="my-4">
+        
+        @if (Context.Session.GetString("Username") == null)
+        {
+            <p>Hãy tham gia cùng chúng tôi để cứu sống nhiều mạng người</p>
+            <a class="btn btn-danger btn-lg me-2" asp-controller="Account" asp-action="Register" role="button">
+                <i class="bi bi-person-plus"></i> Đăng ký ngay
+            </a>
+            <a class="btn btn-outline-danger btn-lg" asp-controller="Account" asp-action="Login" role="button">
+                <i class="bi bi-box-arrow-in-right"></i> Đăng nhập
+            </a>
+        }
+        else
+        {
+            <p>Cảm ơn bạn đã tham gia cùng chúng tôi!</p>
+            <a class="btn btn-danger btn-lg" asp-controller="Donation" asp-action="Book" role="button">
+                <i class="bi bi-calendar-plus"></i> Đặt lịch hiến máu
+            </a>
+        }
+    </div>
 </div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="bi bi-people-fill text-danger" style="font-size: 3rem;"></i>
+                <h3 class="card-title mt-3">@ViewBag.TotalDonors</h3>
+                <p class="card-text">Người hiến máu</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="bi bi-calendar-check text-success" style="font-size: 3rem;"></i>
+                <h3 class="card-title mt-3">@ViewBag.TotalAppointments</h3>
+                <p class="card-text">Lịch hẹn</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="bi bi-hospital text-primary" style="font-size: 3rem;"></i>
+                <h3 class="card-title mt-3">@((ViewBag.MedicalCenters as IEnumerable<dynamic>)?.Count() ?? 0)</h3>
+                <p class="card-text">Trung tâm y tế</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-12">
+        <h2 class="text-center mb-4">Quy trình hiến máu</h2>
+    </div>
+    <div class="col-md-3">
+        <div class="text-center">
+            <div class="rounded-circle bg-danger text-white d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <span class="h3">1</span>
+            </div>
+            <h5 class="mt-3">Đăng ký</h5>
+            <p>Tạo tài khoản và cập nhật thông tin cá nhân</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-center">
+            <div class="rounded-circle bg-danger text-white d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <span class="h3">2</span>
+            </div>
+            <h5 class="mt-3">Khảo sát sức khỏe</h5>
+            <p>Trả lời câu hỏi về tình trạng sức khỏe</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-center">
+            <div class="rounded-circle bg-danger text-white d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <span class="h3">3</span>
+            </div>
+            <h5 class="mt-3">Đặt lịch</h5>
+            <p>Chọn thời gian và địa điểm phù hợp</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="text-center">
+            <div class="rounded-circle bg-danger text-white d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <span class="h3">4</span>
+            </div>
+            <h5 class="mt-3">Hiến máu</h5>
+            <p>Đến trung tâm và thực hiện hiến máu</p>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.MedicalCenters != null)
+{
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2 class="text-center mb-4">Các trung tâm tiếp nhận</h2>
+        </div>
+        @foreach (var center in ViewBag.MedicalCenters)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@center.Name</h5>
+                        <p class="card-text">
+                            <i class="bi bi-geo-alt"></i> @center.Address<br>
+                            <i class="bi bi-telephone"></i> @center.PhoneNumber
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
