@@ -6,14 +6,17 @@ public class Donor : BaseEntity
 {
     public string FullName { get; set; } = "";
     public DateTime? DateOfBirth { get; set; }
-    public string? Gender { get; set; }  
+    public string? Gender { get; set; }  // M/F/khac - TODO: sua thanh enum
     public string? PhoneNumber { get; set; }
     public string? Address { get; set; }
-    public string? IdentificationNumber { get; set; } // cccd
+    public string? IdentificationNumber { get; set; } // cccd/cmnd gi do
     
     public bool IsAvailable { get; set; } = true;
-    public int TotalDonations { get; set; }
+    public int TotalDonations { get; set; }  
     public DateTime? LastDonationDate { get; set; }
+    
+    // temp field - xoa sau
+    //public string? TempNotes { get; set; }
 
     public int UserId { get; set; }
     public User User { get; set; }
@@ -34,12 +37,18 @@ public class Donor : BaseEntity
     
     public bool CanDonateBlood()
     {
-        // check xem da du 84 ngay chua
+        // check dk hien mau
         if (LastDonationDate == null) 
-            return true;
+            return true;  // chua hien bao h thi ok
             
         var days = (DateTime.Now - LastDonationDate.Value).Days;
-        return days >= 84;  // 12 tuan
+        
+        // TODO: check them dk khac nhu can nang, benh ly,...
+        // if(Weight < 45) return false; // can > 45kg
+        
+        //Console.WriteLine($"DEBUG: Days since last donation: {days}");
+        
+        return days >= 84;  // 12 tuan = 84 ngay (3 thang)
     }
     
     public int GetDaysUntilNextDonation()
