@@ -17,4 +17,7 @@
     <ProjectReference Include="..\BloodDonation.Domain\BloodDonation.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BloodDonation.Application\BloodDonation.Application.csproj" />
+  </ItemGroup>
 </Project>

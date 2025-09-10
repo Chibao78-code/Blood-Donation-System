@@ -172,6 +172,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Application\\BloodDonation.Application.csproj": {
+                "projectPath": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Application\\BloodDonation.Application.csproj"
+              },
               "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj": {
                 "projectPath": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj"
               }
