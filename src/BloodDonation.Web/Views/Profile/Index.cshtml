@@ -1,0 +1,182 @@
+@model BloodDonation.Application.DTOs.ProfileDto
+@{
+    ViewData["Title"] = "Hồ sơ cá nhân";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-person-circle"></i> Thông tin cá nhân
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Trạng thái hiến máu</h5>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="availabilitySwitch" @(Model.IsAvailable ? "checked" : "")>
+                                    <label class="form-check-label" for="availabilitySwitch">
+                                        @if(Model.IsAvailable)
+                                        {
+                                            <span class="badge bg-success">Sẵn sàng</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">Không sẵn sàng</span>
+                                        }
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <a asp-action="Edit" class="btn btn-primary">
+                                <i class="bi bi-pencil"></i> Chỉnh sửa thông tin
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td class="text-muted">Họ và tên:</td>
+                                    <td><strong>@(string.IsNullOrEmpty(Model.FullName) ? "Chưa cập nhật" : Model.FullName)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">Ngày sinh:</td>
+                                    <td>@(Model.DateOfBirth?.ToString("dd/MM/yyyy") ?? "Chưa cập nhật")</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">Giới tính:</td>
+                                    <td>@(Model.Gender ?? "Chưa cập nhật")</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">Số điện thoại:</td>
+                                    <td>@(Model.PhoneNumber ?? "Chưa cập nhật")</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">CCCD/CMND:</td>
+                                    <td>@(Model.IdentificationNumber ?? "Chưa cập nhật")</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td class="text-muted">Nhóm máu:</td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(Model.BloodType))
+                                        {
+                                            <span class="badge bg-danger">@Model.BloodType</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Chưa xác định</span>
+                                        }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">Địa chỉ:</td>
+                                    <td>@(Model.Address ?? "Chưa cập nhật")</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">Email:</td>
+                                    <td>@Model.Email</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">Tên đăng nhập:</td>
+                                    <td>@Model.Username</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h5>Thống kê hiến máu</h5>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h3 class="text-danger">@Model.TotalDonations</h3>
+                                    <p class="mb-0">Lần hiến máu</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h5 class="text-info">
+                                        @if(Model.LastDonationDate.HasValue)
+                                        {
+                                            @Model.LastDonationDate.Value.ToString("dd/MM/yyyy")
+                                        }
+                                        else
+                                        {
+                                            <span>Chưa từng</span>
+                                        }
+                                    </h5>
+                                    <p class="mb-0">Lần hiến gần nhất</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    @if(ViewBag.CanDonateNow == true)
+                                    {
+                                        <h5 class="text-success">Có thể hiến</h5>
+                                        <p class="mb-0">
+                                            <a asp-controller="Donation" asp-action="Book" class="btn btn-sm btn-success">Đặt lịch ngay</a>
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <h5 class="text-warning">Còn @ViewBag.DaysUntilNext ngày</h5>
+                                        <p class="mb-0">Đến lần tiếp theo</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#availabilitySwitch').change(function() {
+                var isChecked = $(this).is(':checked');
+                
+                $.post('@Url.Action("ToggleAvailability", "Profile")', function(response) {
+                    if(response.success) {
+                        // update badge
+                        var label = $('#availabilitySwitch').next('label');
+                        if(response.isAvailable) {
+                            label.html('<span class="badge bg-success">Sẵn sàng</span>');
+                        } else {
+                            label.html('<span class="badge bg-secondary">Không sẵn sàng</span>');
+                        }
+                        
+                        // show toast or something
+                        alert(response.message);
+                    } else {
+                        // revert switch if failed
+                        $('#availabilitySwitch').prop('checked', !isChecked);
+                        alert('Có lỗi xảy ra');
+                    }
+                });
+            });
+        });
+    </script>
+}
