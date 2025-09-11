@@ -81,5 +81,71 @@ public class NotificationService : INotificationService
             return false;
         }
     }
+     public async Task<bool> SendAppointmentConfirmationAsync(int appointmentId)
+    {
+        try
+        {
+            var appointment = await _unitOfWork.DonationAppointments
+                .Query()
+                .Include(a => a.Donor)
+                    .ThenInclude(d => d.User)
+                .Include(a => a.MedicalCenter)
+                .Include(a => a.BloodType)
+                .FirstOrDefaultAsync(a => a.Id == appointmentId);
+
+            if (appointment == null) return false;
+
+            // Tạo nội dung xác nhận chi tiết và thân thiện
+            var confirmationMessage = new StringBuilder();
+            confirmationMessage.AppendLine($"Xin chào {appointment.Donor.User.FullName},");
+            confirmationMessage.AppendLine();
+            confirmationMessage.AppendLine("Lịch hẹn hiến máu của bạn đã được xác nhận!");
+            confirmationMessage.AppendLine();
+            confirmationMessage.AppendLine("📅 Chi tiết lịch hẹn:");
+            confirmationMessage.AppendLine($"• Ngày: {appointment.AppointmentDate:dd/MM/yyyy}");
+            confirmationMessage.AppendLine($"• Giờ: {appointment.TimeSlot}");
+            confirmationMessage.AppendLine($"• Địa điểm: {appointment.MedicalCenter.Name}");
+            confirmationMessage.AppendLine($"• Địa chỉ: {appointment.MedicalCenter.Address}");
+            confirmationMessage.AppendLine($"• Nhóm máu: {appointment.BloodType.TypeName}");
+            confirmationMessage.AppendLine();
+            confirmationMessage.AppendLine("💡 Lưu ý trước khi hiến máu:");
+            confirmationMessage.AppendLine("• Ngủ đủ giấc (ít nhất 6 tiếng)");
+            confirmationMessage.AppendLine("• Ăn uống đầy đủ, tránh thức ăn nhiều dầu mỡ");
+            confirmationMessage.AppendLine("• Uống nhiều nước (ít nhất 500ml)");
+            confirmationMessage.AppendLine("• Mang theo CMND/CCCD");
+            confirmationMessage.AppendLine();
+            confirmationMessage.AppendLine("Cảm ơn bạn đã đăng ký hiến máu cứu người!");
+            
+            // Lưu thông báo
+            var notification = new Notification
+            {
+                UserId = appointment.Donor.UserId,
+                Title = "Xác nhận lịch hẹn hiến máu",
+                Content = confirmationMessage.ToString(),
+                Type = "Confirmation",
+                IsRead = false,
+                CreatedAt = DateTime.Now
+            };
+            
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+            
+            // Gửi email
+            if (!string.IsNullOrEmpty(appointment.Donor.User.Email))
+            {
+                await _emailService.SendEmailAsync(
+                    appointment.Donor.User.Email,
+                    "Xác nhận lịch hẹn hiến máu",
+                    confirmationMessage.ToString());
+            }
+            
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Lỗi khi gửi xác nhận lịch hẹn {appointmentId}");
+            return false;
+        }
+    }
 
    
