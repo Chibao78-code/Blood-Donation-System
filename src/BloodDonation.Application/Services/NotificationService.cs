@@ -147,5 +147,141 @@ public class NotificationService : INotificationService
             return false;
         }
     }
+    public async Task<bool> SendAppointmentCancellationAsync(int appointmentId, string reason)
+    {
+        try
+        {
+            var appointment = await _unitOfWork.DonationAppointments
+                .Query()
+                .Include(a => a.Donor)
+                    .ThenInclude(d => d.User)
+                .FirstOrDefaultAsync(a => a.Id == appointmentId);
+
+            if (appointment == null) return false;
+
+            var message = $@"Xin chào {appointment.Donor.User.FullName},
+
+Lịch hẹn hiến máu của bạn vào ngày {appointment.AppointmentDate:dd/MM/yyyy} đã được hủy.
+Lý do: {reason}
+
+Bạn có thể đặt lịch mới bất cứ lúc nào. Chúng tôi rất mong được gặp lại bạn!
+
+Trân trọng,
+Đội ngũ Blood Donation System";
+
+            var notification = new Notification
+            {
+                UserId = appointment.Donor.UserId,
+                Title = "Lịch hẹn đã được hủy",
+                Content = message,
+                Type = "Cancellation",
+                IsRead = false,
+                CreatedAt = DateTime.Now
+            };
+            
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+            
+            // Gửi email thông báo
+            if (!string.IsNullOrEmpty(appointment.Donor.User.Email))
+            {
+                await _emailService.SendEmailAsync(
+                    appointment.Donor.User.Email,
+                    "Thông báo hủy lịch hẹn hiến máu",
+                    message);
+            }
+            
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi gửi thông báo hủy lịch hẹn");
+            return false;
+        }
+    }
+
+    public async Task<bool> SendTestResultNotificationAsync(int donorId, TestResultDto testResult)
+    {
+        try
+        {
+            var donor = await _unitOfWork.Donors
+                .Query()
+                .Include(d => d.User)
+                .FirstOrDefaultAsync(d => d.Id == donorId);
+
+            if (donor == null) return false;
+
+            var resultMessage = new StringBuilder();
+            resultMessage.AppendLine($"Kính gửi {donor.User.FullName},");
+            resultMessage.AppendLine();
+            resultMessage.AppendLine($"Kết quả xét nghiệm máu ngày {testResult.TestDate:dd/MM/yyyy}:");
+            resultMessage.AppendLine();
+            
+            // Hiển thị các chỉ số xét nghiệm
+            resultMessage.AppendLine("📊 Chỉ số máu:");
+            resultMessage.AppendLine($"• Hemoglobin: {testResult.Hemoglobin} g/dL (bình thường: 12-16)");
+            resultMessage.AppendLine($"• Bạch cầu: {testResult.WhiteBloodCells} x10⁹/L (bình thường: 4-10)");
+            resultMessage.AppendLine($"• Tiểu cầu: {testResult.Platelets} x10⁹/L (bình thường: 150-400)");
+            resultMessage.AppendLine();
+            
+            resultMessage.AppendLine("🔬 Xét nghiệm virus:");
+            resultMessage.AppendLine($"• HIV: {(testResult.HivResult ? "Dương tính ⚠️" : "Âm tính ✓")}");
+            resultMessage.AppendLine($"• Viêm gan B: {(testResult.HepatitisBResult ? "Dương tính ⚠️" : "Âm tính ✓")}");
+            resultMessage.AppendLine($"• Viêm gan C: {(testResult.HepatitisCResult ? "Dương tính ⚠️" : "Âm tính ✓")}");
+            resultMessage.AppendLine($"• Giang mai: {(testResult.SyphilisResult ? "Dương tính ⚠️" : "Âm tính ✓")}");
+            resultMessage.AppendLine();
+            
+            if (testResult.IsHealthy)
+            {
+                resultMessage.AppendLine("✅ Kết luận: Sức khỏe tốt, đủ điều kiện hiến máu.");
+                resultMessage.AppendLine("Cảm ơn bạn đã đóng góp cho cộng đồng!");
+            }
+            else
+            {
+                resultMessage.AppendLine("⚠️ Cần tư vấn thêm với bác sĩ.");
+                if (!string.IsNullOrEmpty(testResult.DoctorNotes))
+                {
+                    resultMessage.AppendLine($"Ghi chú: {testResult.DoctorNotes}");
+                }
+            }
+            
+            if (!string.IsNullOrEmpty(testResult.Recommendations))
+            {
+                resultMessage.AppendLine();
+                resultMessage.AppendLine($"💊 Khuyến nghị: {testResult.Recommendations}");
+            }
+
+            var notification = new Notification
+            {
+                UserId = donor.UserId,
+                Title = "Kết quả xét nghiệm máu",
+                Content = resultMessage.ToString(),
+                Type = "TestResult",
+                IsRead = false,
+                CreatedAt = DateTime.Now
+            };
+            
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+            
+            // Gửi email kèm kết quả
+            if (!string.IsNullOrEmpty(donor.User.Email))
+            {
+                await _emailService.SendEmailAsync(
+                    donor.User.Email,
+                    "Kết quả xét nghiệm máu",
+                    resultMessage.ToString());
+            }
+            
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi gửi kết quả xét nghiệm");
+            return false;
+        }
+    }
+
+
 
    
