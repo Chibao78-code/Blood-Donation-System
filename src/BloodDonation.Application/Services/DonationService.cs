@@ -4,17 +4,25 @@ using BloodDonation.Domain.Entities;
 using BloodDonation.Domain.Enums;
 using BloodDonation.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
+using Microsoft.Extensions.Logging;
+using System.Text;
 
 namespace BloodDonation.Application.Services;
 
 public class DonationService : IDonationService
 {
     private readonly IUnitOfWork _unitOfWork;
+    private readonly ILogger<DonationService> _logger;
+    private readonly INotificationService _notificationService;
 
-    public DonationService(IUnitOfWork unitOfWork)
+    public DonationService(
+        IUnitOfWork unitOfWork, 
+        ILogger<DonationService> logger,
+        INotificationService notificationService)
     {
         _unitOfWork = unitOfWork;
+        _logger = logger;
+        _notificationService = notificationService;
     }
 
     public async Task<(bool Success, string Message, int? AppointmentId)> BookAppointmentAsync(BookAppointmentDto dto)
