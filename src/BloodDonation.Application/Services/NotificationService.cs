@@ -97,7 +97,7 @@ public class NotificationService : INotificationService
 
             // Tạo nội dung xác nhận chi tiết và thân thiện
             var confirmationMessage = new StringBuilder();
-            confirmationMessage.AppendLine($"Xin chào {appointment.Donor.User.FullName},");
+confirmationMessage.AppendLine($"Xin chào {appointment.Donor.FullName},");
             confirmationMessage.AppendLine();
             confirmationMessage.AppendLine("Lịch hẹn hiến máu của bạn đã được xác nhận!");
             confirmationMessage.AppendLine();
@@ -106,7 +106,7 @@ public class NotificationService : INotificationService
             confirmationMessage.AppendLine($"• Giờ: {appointment.TimeSlot}");
             confirmationMessage.AppendLine($"• Địa điểm: {appointment.MedicalCenter.Name}");
             confirmationMessage.AppendLine($"• Địa chỉ: {appointment.MedicalCenter.Address}");
-            confirmationMessage.AppendLine($"• Nhóm máu: {appointment.BloodType.TypeName}");
+confirmationMessage.AppendLine($"• Nhóm máu: {appointment.BloodType.Type}");
             confirmationMessage.AppendLine();
             confirmationMessage.AppendLine("💡 Lưu ý trước khi hiến máu:");
             confirmationMessage.AppendLine("• Ngủ đủ giấc (ít nhất 6 tiếng)");
@@ -159,7 +159,7 @@ public class NotificationService : INotificationService
 
             if (appointment == null) return false;
 
-            var message = $@"Xin chào {appointment.Donor.User.FullName},
+var message = $@"Xin chào {appointment.Donor.FullName},
 
 Lịch hẹn hiến máu của bạn vào ngày {appointment.AppointmentDate:dd/MM/yyyy} đã được hủy.
 Lý do: {reason}
@@ -212,7 +212,7 @@ Trân trọng,
             if (donor == null) return false;
 
             var resultMessage = new StringBuilder();
-            resultMessage.AppendLine($"Kính gửi {donor.User.FullName},");
+resultMessage.AppendLine($"Kính gửi {donor.FullName},");
             resultMessage.AppendLine();
             resultMessage.AppendLine($"Kết quả xét nghiệm máu ngày {testResult.TestDate:dd/MM/yyyy}:");
             resultMessage.AppendLine();
@@ -284,4 +284,309 @@ Trân trọng,
 
 
 
-   
+    public async Task<bool> SendThankYouMessageAsync(int donorId, int donationAmount)
+    {
+        try
+        {
+            var donor = await _unitOfWork.Donors
+                .Query()
+                .Include(d => d.User)
+                .FirstOrDefaultAsync(d => d.Id == donorId);
+
+            if (donor == null) return false;
+
+            // Cập nhật số liệu hiến máu cơ bản cho người hiến (giữ logic đơn giản)
+            donor.TotalDonations++;
+            donor.LastDonationDate = DateTime.Now;
+            await _unitOfWork.SaveChangesAsync();
+
+            var thankYouMessage = $@"Xin chào {donor.FullName},
+
+🎉 Cảm ơn bạn đã hoàn thành hiến máu!
+
+Bạn vừa đóng góp {donationAmount}ml máu. Hành động của bạn có thể cứu sống nhiều người.
+
+Một vài lưu ý nhỏ sau khi hiến máu:
+• Nghỉ ngơi 10-15 phút
+• Uống nhiều nước
+• Tránh vận động mạnh trong ngày
+
+Hẹn gặp lại bạn sau 3 tháng!";
+
+            var notification = new Notification
+            {
+                UserId = donor.UserId,
+                Title = "Cảm ơn bạn đã hiến máu!",
+                Content = thankYouMessage,
+                Type = "ThankYou",
+                IsRead = false,
+                CreatedAt = DateTime.Now
+            };
+
+            await _unitOfWork.Notifications.AddAsync(notification);
+            await _unitOfWork.SaveChangesAsync();
+
+            if (!string.IsNullOrEmpty(donor.User.Email))
+            {
+                await _emailService.SendEmailAsync(
+                    donor.User.Email,
+                    "Cảm ơn bạn đã hiến máu",
+                    thankYouMessage);
+            }
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi gửi lời cảm ơn");
+            return false;
+        }
+    }
+
+    public async Task<bool> SendUrgentBloodRequestAsync(string bloodType, string location, string message)
+    {
+        try
+        {
+            // Lọc những người hiến có nhóm máu phù hợp và đã đủ thời gian giữa 2 lần hiến
+            var eligibleDonors = await _unitOfWork.Donors
+                .Query()
+                .Include(d => d.User)
+                .Include(d => d.BloodType)
+                .Where(d => d.BloodType != null && d.BloodType.Type == bloodType &&
+                            (d.LastDonationDate == null ||
+                             EF.Functions.DateDiffDay(d.LastDonationDate.Value, DateTime.Now) >= 84))
+                .ToListAsync();
+
+            if (!eligibleDonors.Any())
+            {
+                _logger.LogWarning($"Không có người hiến phù hợp cho nhóm máu {bloodType}");
+                return false;
+            }
+
+            var urgentMessage = $@"🚨 CẦN MÁU KHẨN CẤP 🚨
+
+Cần nhóm máu {bloodType} tại {location}.
+
+{message}
+
+Nếu bạn có thể hỗ trợ, vui lòng liên hệ hotline hoặc đến địa điểm trên.
+Xin cảm ơn!";
+
+            var notifications = new List<Notification>();
+
+            foreach (var d in eligibleDonors)
+            {
+                notifications.Add(new Notification
+                {
+                    UserId = d.UserId,
+                    Title = $"Khẩn cấp: Cần máu {bloodType}",
+                    Content = urgentMessage,
+                    Type = "UrgentRequest",
+                    IsRead = false,
+                    CreatedAt = DateTime.Now
+                });
+
+                if (!string.IsNullOrEmpty(d.User.Email))
+                {
+                    _ = _emailService.SendEmailAsync(
+                        d.User.Email,
+                        $"Khẩn cấp: Cần máu {bloodType}",
+                        urgentMessage);
+                }
+            }
+
+            await _unitOfWork.Notifications.AddRangeAsync(notifications);
+            await _unitOfWork.SaveChangesAsync();
+
+            _logger.LogInformation($"Đã gửi thông báo khẩn đến {eligibleDonors.Count} người");
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi gửi thông báo khẩn");
+            return false;
+        }
+    }
+
+    public async Task<List<NotificationDto>> GetUserNotificationsAsync(int userId)
+    {
+        try
+        {
+            var list = await _unitOfWork.Notifications
+                .Query()
+                .Where(n => n.UserId == userId)
+                .OrderByDescending(n => n.CreatedAt)
+                .Take(50)
+                .Select(n => new NotificationDto
+                {
+                    Id = n.Id,
+                    UserId = n.UserId,
+                    Title = n.Title,
+                    Content = n.Content,
+                    Type = n.Type,
+                    IsRead = n.IsRead,
+                    CreatedAt = n.CreatedAt,
+                    ReadAt = n.ReadAt,
+                    Priority = DeterminePriority(n.Type),
+                    IconType = DetermineIconType(n.Type)
+                })
+                .ToListAsync();
+
+            return list;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Lỗi khi lấy danh sách thông báo của user {userId}");
+            return new List<NotificationDto>();
+        }
+    }
+
+    public async Task<bool> MarkAsReadAsync(int notificationId)
+    {
+        try
+        {
+            var noti = await _unitOfWork.Notifications.GetByIdAsync(notificationId);
+            if (noti == null) return false;
+
+            noti.IsRead = true;
+            noti.ReadAt = DateTime.Now;
+            await _unitOfWork.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Lỗi khi đánh dấu đã đọc: {notificationId}");
+            return false;
+        }
+    }
+
+    public async Task<bool> SendBirthdayWishesAsync(int donorId)
+    {
+        try
+        {
+            var donor = await _unitOfWork.Donors
+                .Query()
+                .Include(d => d.User)
+                .FirstOrDefaultAsync(d => d.Id == donorId);
+
+            if (donor == null) return false;
+
+            var msg = $@"🎂 Chúc mừng sinh nhật {donor.FullName}!
+Chúc bạn thật nhiều sức khỏe và niềm vui. Cảm ơn bạn đã đồng hành cùng chương trình hiến máu.";
+
+            var n = new Notification
+            {
+                UserId = donor.UserId,
+                Title = "Chúc mừng sinh nhật",
+                Content = msg,
+                Type = "Birthday",
+                IsRead = false,
+                CreatedAt = DateTime.Now
+            };
+
+            await _unitOfWork.Notifications.AddAsync(n);
+            await _unitOfWork.SaveChangesAsync();
+
+            if (!string.IsNullOrEmpty(donor.User.Email))
+            {
+                await _emailService.SendEmailAsync(donor.User.Email, "Chúc mừng sinh nhật", msg);
+            }
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi gửi chúc mừng sinh nhật");
+            return false;
+        }
+    }
+
+    public async Task<bool> SendSystemAnnouncementAsync(string title, string content, List<int>? userIds = null)
+    {
+        try
+        {
+            if (userIds == null || userIds.Count == 0)
+            {
+                userIds = await _unitOfWork.Users
+                    .Query()
+                    .Where(u => u.IsActive)
+                    .Select(u => u.Id)
+                    .ToListAsync();
+            }
+
+            var toAdd = userIds.Select(uid => new Notification
+            {
+                UserId = uid,
+                Title = title,
+                Content = content,
+                Type = "System",
+                IsRead = false,
+                CreatedAt = DateTime.Now
+            }).ToList();
+
+            await _unitOfWork.Notifications.AddRangeAsync(toAdd);
+            await _unitOfWork.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi gửi thông báo hệ thống");
+            return false;
+        }
+    }
+
+    // Helper: dựng nội dung nhắc nhở ngắn gọn, dễ đọc
+    private string BuildReminderMessage(DonationAppointment appointment, int hoursLeft)
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine($"Xin chào {appointment.Donor.FullName},");
+        if (hoursLeft <= 24)
+        {
+            sb.AppendLine($"⏰ Còn {hoursLeft} giờ nữa đến lịch hiến máu của bạn");
+        }
+        else
+        {
+            var days = hoursLeft / 24;
+            sb.AppendLine($"📅 Còn {days} ngày nữa đến lịch hiến máu của bạn");
+        }
+        sb.AppendLine();
+        sb.AppendLine("Thông tin lịch hẹn:");
+        sb.AppendLine($"• Thời gian: {appointment.AppointmentDate:dd/MM/yyyy} - {appointment.TimeSlot}");
+        sb.AppendLine($"• Địa điểm: {appointment.MedicalCenter.Name}");
+        sb.AppendLine();
+        sb.AppendLine("Nhớ mang CCCD/CMND nhé!");
+        return sb.ToString();
+    }
+
+    private string DeterminePriority(string type)
+    {
+        return type switch
+        {
+            "UrgentRequest" => "High",
+            "TestResult" => "High",
+            "Cancellation" => "Normal",
+            "Reminder" => "Normal",
+            "Confirmation" => "Normal",
+            "ThankYou" => "Low",
+            "Birthday" => "Low",
+            "System" => "Normal",
+            _ => "Normal"
+        };
+    }
+
+    private string DetermineIconType(string type)
+    {
+        return type switch
+        {
+            "UrgentRequest" => "danger",
+            "TestResult" => "info",
+            "Cancellation" => "warning",
+            "Reminder" => "info",
+            "Confirmation" => "success",
+            "ThankYou" => "success",
+            "Birthday" => "success",
+            "System" => "info",
+            _ => "info"
+        };
+    }
+}

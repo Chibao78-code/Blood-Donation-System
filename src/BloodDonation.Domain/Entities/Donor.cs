@@ -14,6 +14,7 @@ public class Donor : BaseEntity
     public bool IsAvailable { get; set; } = true;
     public int TotalDonations { get; set; }  
     public DateTime? LastDonationDate { get; set; }
+    public int TotalBloodDonated { get; set; } = 0; // tong so ml mau da hien
     
     // temp field - xoa sau
     //public string? TempNotes { get; set; }
