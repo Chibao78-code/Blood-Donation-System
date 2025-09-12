@@ -348,13 +348,13 @@ Hẹn gặp lại bạn sau 3 tháng!";
         try
         {
             // Lọc những người hiến có nhóm máu phù hợp và đã đủ thời gian giữa 2 lần hiến
+            var cutoffDate = DateTime.Now.AddDays(-84); // 84 ngay = 3 thang, tinh nguoc lai
             var eligibleDonors = await _unitOfWork.Donors
                 .Query()
                 .Include(d => d.User)
                 .Include(d => d.BloodType)
                 .Where(d => d.BloodType != null && d.BloodType.Type == bloodType &&
-                            (d.LastDonationDate == null ||
-                             EF.Functions.DateDiffDay(d.LastDonationDate.Value, DateTime.Now) >= 84))
+                            (d.LastDonationDate == null || d.LastDonationDate.Value <= cutoffDate))
                 .ToListAsync();
 
             if (!eligibleDonors.Any())
