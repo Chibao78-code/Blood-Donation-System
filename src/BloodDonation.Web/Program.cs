@@ -4,6 +4,7 @@ using BloodDonation.Domain.Interfaces;
 using BloodDonation.Infrastructure.Repositories;
 using BloodDonation.Application.Interfaces;
 using BloodDonation.Application.Services;
+using BloodDonation.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IDonationService, DonationService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
