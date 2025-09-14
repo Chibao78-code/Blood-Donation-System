@@ -127,4 +127,56 @@ public class BloodInventoryService : IBloodInventoryService
             throw;
         }
     }
+        public async Task<bool> ReserveBloodAsync(int inventoryId, int requestId)
+    {
+        try
+        {
+            var inventory = await _unitOfWork.BloodInventories.GetByIdAsync(inventoryId);
+            if (inventory == null)
+            {
+                _logger.LogWarning($"Không tìm thấy túi máu với ID {inventoryId}");
+                return false;
+            }
+
+            // Kiểm tra xem có thể đặt trước không
+            if (!inventory.IsUsable())
+            {
+                _logger.LogWarning($"Túi máu {inventoryId} không thể đặt trước");
+                return false;
+            }
+
+            inventory.Reserve();
+            await _unitOfWork.BloodInventories.UpdateAsync(inventory);
+            await _unitOfWork.SaveChangesAsync();
+
+            _logger.LogInformation($"Đã đặt trước túi máu {inventoryId} cho yêu cầu {requestId}");
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Lỗi khi đặt trước túi máu {inventoryId}");
+            return false;
+        }
+    }
+
+    public async Task<bool> UseBloodAsync(int inventoryId)
+    {
+        try
+        {
+            var inventory = await _unitOfWork.BloodInventories.GetByIdAsync(inventoryId);
+            if (inventory == null) return false;
+
+            inventory.MarkAsUsed();
+            await _unitOfWork.BloodInventories.UpdateAsync(inventory);
+            await _unitOfWork.SaveChangesAsync();
+
+            _logger.LogInformation($"Túi máu {inventoryId} đã được sử dụng");
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Lỗi khi đánh dấu sử dụng túi máu {inventoryId}");
+            return false;
+        }
+    }
    
