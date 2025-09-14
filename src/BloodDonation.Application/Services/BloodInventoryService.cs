@@ -72,5 +72,59 @@ public class BloodInventoryService : IBloodInventoryService
 
         return inventory != null ? MapToDto(inventory) : null;
     }
+    public async Task<BloodInventoryDto> AddBloodToInventoryAsync(AddBloodInventoryDto dto)
+    {
+        try
+        {
+            // Tạo mới túi máu
+            var inventory = new BloodInventory
+            {
+                Quantity = dto.Quantity,
+                BloodTypeId = dto.BloodTypeId,
+                MedicalCenterId = dto.MedicalCenterId,
+                DonorId = dto.DonorId,
+                CollectionDate = dto.CollectionDate ?? DateTime.Now,
+                // Mặc định hạn sử dụng là 42 ngày
+                ExpiryDate = dto.ExpiryDate ?? (dto.CollectionDate ?? DateTime.Now).AddDays(42),
+                Status = BloodInventoryStatus.Testing, // Ban đầu phải kiểm tra
+                BatchNumber = dto.BatchNumber,
+                CreatedAt = DateTime.Now
+            };
 
+            // Tự động tạo mã lô nếu chưa có
+            inventory.GenerateBatchNumber();
+
+            await _unitOfWork.BloodInventories.AddAsync(inventory);
+            
+            // Cập nhật thông tin người hiến nếu có
+            if (dto.DonorId.HasValue)
+            {
+                var donor = await _unitOfWork.Donors.GetByIdAsync(dto.DonorId.Value);
+                if (donor != null)
+                {
+                    donor.UpdateAfterDonation((int)dto.Quantity);
+                    await _unitOfWork.Donors.UpdateAsync(donor);
+                    
+                    // Gửi email cảm ơn
+                    if (donor.User != null)
+                    {
+                        await _emailService.SendDonationThankYouAsync(
+                            donor.User.Email, 
+                            donor.FullName);
+                    }
+                }
+            }
+
+            await _unitOfWork.SaveChangesAsync();
+
+            // Load lại với đầy đủ thông tin
+            var result = await GetBloodInventoryByIdAsync(inventory.Id);
+            return result!;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi thêm máu vào kho");
+            throw;
+        }
+    }
    
