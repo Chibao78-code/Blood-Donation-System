@@ -179,4 +179,58 @@ public class BloodInventoryService : IBloodInventoryService
             return false;
         }
     }
+    
+    public async Task<bool> CancelReservationAsync(int inventoryId)
+    {
+        try
+        {
+            var inventory = await _unitOfWork.BloodInventories.GetByIdAsync(inventoryId);
+            if (inventory == null) return false;
+
+            inventory.CancelReservation();
+            await _unitOfWork.BloodInventories.UpdateAsync(inventory);
+            await _unitOfWork.SaveChangesAsync();
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Lỗi khi hủy đặt trước túi máu {inventoryId}");
+            return false;
+        }
+    }
+
+    public async Task<int> CheckAndUpdateExpiredBloodAsync()
+    {
+        try
+        {
+            // Tìm tất cả máu đã hết hạn nhưng chưa được đánh dấu
+            var expiredBlood = await _unitOfWork.BloodInventories
+                .Query()
+                .Where(b => b.ExpiryDate <= DateTime.Now && 
+                           b.Status != BloodInventoryStatus.Expired &&
+                           b.Status != BloodInventoryStatus.Used)
+                .ToListAsync();
+
+            if (!expiredBlood.Any()) return 0;
+
+            // Cập nhật trạng thái
+            foreach (var blood in expiredBlood)
+            {
+                blood.Status = BloodInventoryStatus.Expired;
+                blood.UpdatedAt = DateTime.Now;
+                await _unitOfWork.BloodInventories.UpdateAsync(blood);
+            }
+
+            await _unitOfWork.SaveChangesAsync();
+
+            _logger.LogInformation($"Đã cập nhật {expiredBlood.Count} túi máu hết hạn");
+            return expiredBlood.Count;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi kiểm tra máu hết hạn");
+            return 0;
+        }
+    }
    
