@@ -233,4 +233,47 @@ public class BloodInventoryService : IBloodInventoryService
             return 0;
         }
     }
+    public async Task<BloodInventoryStatisticsDto> GetStatisticsAsync()
+    {
+        try
+        {
+            var allInventories = await _unitOfWork.BloodInventories
+                .Query()
+                .Include(b => b.BloodType)
+                .ToListAsync();
+
+            var stats = new BloodInventoryStatisticsDto
+            {
+                TotalUnits = allInventories.Count,
+                TotalVolume = allInventories.Sum(b => b.Quantity),
+                AvailableUnits = allInventories.Count(b => b.Status == BloodInventoryStatus.Available),
+                ReservedUnits = allInventories.Count(b => b.Status == BloodInventoryStatus.Reserved),
+                UsedUnits = allInventories.Count(b => b.Status == BloodInventoryStatus.Used),
+                ExpiredUnits = allInventories.Count(b => b.Status == BloodInventoryStatus.Expired),
+                ExpiringInWeek = allInventories.Count(b => b.IsNearExpiry())
+            };
+
+            // Thống kê theo nhóm máu
+            var bloodTypeGroups = allInventories
+                .Where(b => b.Status == BloodInventoryStatus.Available)
+                .GroupBy(b => b.BloodType?.Name ?? "Unknown")
+                .Select(g => new BloodInventoryStatisticsDto.BloodTypeStatistic
+                {
+                    BloodType = g.Key,
+                    Units = g.Count(),
+                    Volume = g.Sum(b => b.Quantity),
+                    StockLevel = GetStockLevel(g.Count()) // phụ thuộc vào số lượng
+                })
+                .ToList();
+
+            stats.BloodTypeStatistics = bloodTypeGroups;
+
+            return stats;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi lấy thống kê kho máu");
+            throw;
+        }
+    }
    
