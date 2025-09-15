@@ -316,4 +316,35 @@ public class BloodInventoryService : IBloodInventoryService
 
         return lowStockInventories.Select(MapToDto).ToList();
     }
+    public async Task<List<BloodInventoryDto>> FindCompatibleBloodAsync(string bloodType, decimal quantityNeeded)
+    {
+        // Logic tìm máu tương thích
+        // Ví dụ: O- có thể cho tất cả, AB+ có thể nhận từ tất cả
+        var compatibleTypes = GetCompatibleBloodTypes(bloodType);
+        
+        var compatibleBlood = await _unitOfWork.BloodInventories
+            .Query()
+            .Include(b => b.BloodType)
+            .Include(b => b.MedicalCenter)
+            .Where(b => compatibleTypes.Contains(b.BloodType.Name) &&
+                       b.Status == BloodInventoryStatus.Available &&
+                       !b.IsExpired())
+            .OrderBy(b => b.ExpiryDate) // Dùng máu sắp hết hạn trước
+            .ToListAsync();
+
+        // Lọc lấy đủ số lượng cần
+        var result = new List<BloodInventory>();
+        decimal totalQuantity = 0;
+        
+        foreach (var blood in compatibleBlood)
+        {
+            result.Add(blood);
+            totalQuantity += blood.Quantity;
+            
+            if (totalQuantity >= quantityNeeded)
+                break;
+        }
+
+        return result.Select(MapToDto).ToList();
+    }
    
