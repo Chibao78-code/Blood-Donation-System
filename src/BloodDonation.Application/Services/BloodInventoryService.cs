@@ -292,4 +292,28 @@ public class BloodInventoryService : IBloodInventoryService
 
         return expiringBlood.Select(MapToDto).ToList();
     }
+    public async Task<List<BloodInventoryDto>> GetLowStockBloodTypesAsync(int minimumUnits = 5)
+    {
+        // Đếm số lượng túi máu available cho mỗi loại
+        var bloodTypeCounts = await _unitOfWork.BloodInventories
+            .Query()
+            .Where(b => b.Status == BloodInventoryStatus.Available && !b.IsExpired())
+            .GroupBy(b => b.BloodTypeId)
+            .Select(g => new { BloodTypeId = g.Key, Count = g.Count() })
+            .Where(x => x.Count < minimumUnits)
+            .ToListAsync();
+
+        var lowStockIds = bloodTypeCounts.Select(x => x.BloodTypeId).ToList();
+
+        // Lấy chi tiết các túi máu còn lại
+        var lowStockInventories = await _unitOfWork.BloodInventories
+            .Query()
+            .Include(b => b.BloodType)
+            .Include(b => b.MedicalCenter)
+            .Where(b => lowStockIds.Contains(b.BloodTypeId) &&
+                       b.Status == BloodInventoryStatus.Available)
+            .ToListAsync();
+
+        return lowStockInventories.Select(MapToDto).ToList();
+    }
    
