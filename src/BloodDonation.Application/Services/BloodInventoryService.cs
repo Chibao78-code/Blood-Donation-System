@@ -276,4 +276,20 @@ public class BloodInventoryService : IBloodInventoryService
             throw;
         }
     }
+        public async Task<List<BloodInventoryDto>> GetExpiringBloodAsync(int daysAhead = 7)
+    {
+        var targetDate = DateTime.Now.AddDays(daysAhead);
+        
+        var expiringBlood = await _unitOfWork.BloodInventories
+            .Query()
+            .Include(b => b.BloodType)
+            .Include(b => b.MedicalCenter)
+            .Where(b => b.ExpiryDate <= targetDate && 
+                       b.ExpiryDate > DateTime.Now &&
+                       b.Status == BloodInventoryStatus.Available)
+            .OrderBy(b => b.ExpiryDate)
+            .ToListAsync();
+
+        return expiringBlood.Select(MapToDto).ToList();
+    }
    
