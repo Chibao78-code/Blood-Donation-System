@@ -347,4 +347,31 @@ public class BloodInventoryService : IBloodInventoryService
 
         return result.Select(MapToDto).ToList();
     }
+    // Helper methods
+    private BloodInventoryDto MapToDto(BloodInventory inventory)
+    {
+        return new BloodInventoryDto
+        {
+            Id = inventory.Id,
+            Quantity = inventory.Quantity,
+            CollectionDate = inventory.CollectionDate,
+            ExpiryDate = inventory.ExpiryDate,
+            Status = inventory.Status.ToString(),
+            BatchNumber = inventory.BatchNumber,
+            StorageTemperature = inventory.StorageTemperature,
+            BloodTypeId = inventory.BloodTypeId,
+            BloodTypeName = inventory.BloodType?.Name ?? "",
+            BloodGroup = inventory.BloodType?.Group ?? "",
+            RhFactor = inventory.BloodType?.RhFactor ?? "",
+            MedicalCenterId = inventory.MedicalCenterId,
+            MedicalCenterName = inventory.MedicalCenter?.Name ?? "",
+            DonorId = inventory.DonorId,
+            DonorName = inventory.Donor?.FullName,
+            DaysUntilExpiry = inventory.DaysUntilExpiry(),
+            IsNearExpiry = inventory.IsNearExpiry(),
+            IsExpired = inventory.IsExpired(),
+            IsUsable = inventory.IsUsable()
+        };
+    }
+
    
