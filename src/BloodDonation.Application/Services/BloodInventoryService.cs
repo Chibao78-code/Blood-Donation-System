@@ -373,5 +373,34 @@ public class BloodInventoryService : IBloodInventoryService
             IsUsable = inventory.IsUsable()
         };
     }
+     private string GetStockLevel(int units)
+    {
+        // Đơn giản hóa logic - thực tế phức tạp hơn
+        return units switch
+        {
+            < 5 => "Low",
+            < 15 => "Normal", 
+            _ => "High"
+        };
+    }
+
+    private List<string> GetCompatibleBloodTypes(string bloodType)
+    {
+        // Bảng tương thích máu đơn giản
+        // Thực tế cần phức tạp hơn với Rh factor
+        return bloodType.ToUpper() switch
+        {
+            "O-" => new List<string> { "O-" },
+            "O+" => new List<string> { "O-", "O+" },
+            "A-" => new List<string> { "O-", "A-" },
+            "A+" => new List<string> { "O-", "O+", "A-", "A+" },
+            "B-" => new List<string> { "O-", "B-" },
+            "B+" => new List<string> { "O-", "O+", "B-", "B+" },
+            "AB-" => new List<string> { "O-", "A-", "B-", "AB-" },
+            "AB+" => new List<string> { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" },
+            _ => new List<string> { bloodType }
+        };
+    }
+}
 
    
