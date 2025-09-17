@@ -22,5 +22,42 @@ public class BloodInventoryController : Controller
         _unitOfWork = unitOfWork;
         _logger = logger;
     }
+    // Trang chủ quản lý kho máu
+    public async Task<IActionResult> Index()
+    {
+        try
+        {
+            // Kiểm tra quyền - chỉ staff và admin mới xem được
+            var userRole = HttpContext.Session.GetString("UserRole");
+            if (userRole != "Staff" && userRole != "Admin")
+            {
+                TempData["Error"] = "Bạn không có quyền truy cập trang này";
+                return RedirectToAction("Index", "Home");
+            }
+
+            // Lấy tất cả máu trong kho
+            var inventories = await _inventoryService.GetAvailableBloodAsync();
+            
+            // Lấy thống kê
+            var statistics = await _inventoryService.GetStatisticsAsync();
+            ViewBag.Statistics = statistics;
+            
+            // Lấy danh sách máu sắp hết hạn
+            var expiringBlood = await _inventoryService.GetExpiringBloodAsync(7);
+            ViewBag.ExpiringBlood = expiringBlood;
+            
+            // Kiểm tra và cập nhật máu hết hạn
+            await _inventoryService.CheckAndUpdateExpiredBloodAsync();
+            
+            return View(inventories);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi lấy danh sách kho máu");
+            TempData["Error"] = "Có lỗi xảy ra khi tải dữ liệu";
+            return View(new List<BloodInventoryDto>());
+        }
+    }
+
 
     
