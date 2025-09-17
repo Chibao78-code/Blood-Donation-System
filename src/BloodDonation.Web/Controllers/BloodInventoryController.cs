@@ -105,6 +105,47 @@ public class BloodInventoryController : Controller
 
         return View();
     }
+    
+    // Xử lý thêm máu vào kho
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Add(AddBloodInventoryDto model)
+    {
+        if (!ModelState.IsValid)
+        {
+            // Load lại dữ liệu nếu có lỗi
+            ViewBag.BloodTypes = await _unitOfWork.BloodTypes.GetAllAsync();
+            ViewBag.MedicalCenters = await _unitOfWork.MedicalCenters
+                .Query()
+                .Where(m => m.IsActive)
+                .ToListAsync();
+                
+            return View(model);
+        }
+
+        try
+        {
+            var result = await _inventoryService.AddBloodToInventoryAsync(model);
+            
+            TempData["Success"] = $"Đã thêm túi máu {result.BatchNumber} vào kho";
+            return RedirectToAction("Details", new { id = result.Id });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Lỗi khi thêm máu vào kho");
+            TempData["Error"] = "Có lỗi xảy ra khi thêm máu vào kho";
+            
+            // Load lại dữ liệu
+            ViewBag.BloodTypes = await _unitOfWork.BloodTypes.GetAllAsync();
+            ViewBag.MedicalCenters = await _unitOfWork.MedicalCenters
+                .Query()
+                .Where(m => m.IsActive)
+                .ToListAsync();
+                
+            return View(model);
+        }
+    }
+
 
 
 
