@@ -58,6 +58,54 @@ public class BloodInventoryController : Controller
             return View(new List<BloodInventoryDto>());
         }
     }
+    
+    // Chi tiết một túi máu
+    [HttpGet]
+    public async Task<IActionResult> Details(int id)
+    {
+        var inventory = await _inventoryService.GetBloodInventoryByIdAsync(id);
+        
+        if (inventory == null)
+        {
+            TempData["Error"] = "Không tìm thấy thông tin túi máu";
+            return RedirectToAction("Index");
+        }
+
+        return View(inventory);
+    }
+
+    // Form thêm máu vào kho
+    [HttpGet]
+    public async Task<IActionResult> Add()
+    {
+        // Kiểm tra quyền
+        var userRole = HttpContext.Session.GetString("UserRole");
+        if (userRole != "Staff" && userRole != "Admin")
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
+        // Load dữ liệu cho dropdown
+        ViewBag.BloodTypes = await _unitOfWork.BloodTypes.GetAllAsync();
+        ViewBag.MedicalCenters = await _unitOfWork.MedicalCenters
+            .Query()
+            .Where(m => m.IsActive)
+            .ToListAsync();
+            
+        // Lấy danh sách người hiến gần đây để chọn
+        ViewBag.RecentDonors = await _unitOfWork.Donors
+            .Query()
+            .Include(d => d.User)
+            .Where(d => d.LastDonationDate != null && 
+                       d.LastDonationDate > DateTime.Now.AddDays(-7))
+            .OrderByDescending(d => d.LastDonationDate)
+            .Take(20)
+            .Select(d => new { d.Id, d.FullName, d.LastDonationDate })
+            .ToListAsync();
+
+        return View();
+    }
+
 
 
     
