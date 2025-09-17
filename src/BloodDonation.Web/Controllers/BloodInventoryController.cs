@@ -145,6 +145,23 @@ public class BloodInventoryController : Controller
             return View(model);
         }
     }
+        // Đặt trước túi máu
+    [HttpPost]
+    public async Task<IActionResult> Reserve(int inventoryId, int requestId)
+    {
+        var success = await _inventoryService.ReserveBloodAsync(inventoryId, requestId);
+        
+        if (success)
+        {
+            TempData["Success"] = "Đã đặt trước túi máu thành công";
+        }
+        else
+        {
+            TempData["Error"] = "Không thể đặt trước túi máu này";
+        }
+        
+        return RedirectToAction("Index");
+    }
 
 
 
