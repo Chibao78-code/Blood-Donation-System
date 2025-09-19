@@ -73,5 +73,44 @@ public class TokenService : ITokenService
             throw new Exception("Không thể tạo access token", ex);
         }
     }
+        /// Tạo refresh token ngẫu nhiên
+    /// Dùng để gia hạn session mà không cần login lại
+        public string GenerateRefreshToken()
+    {
+        // Tạo random bytes an toàn bằng crypto
+        var randomNumber = new byte[32];
+        using var rng = RandomNumberGenerator.Create();
+        rng.GetBytes(randomNumber);
+        
+        // Convert sang base64 string
+        return Convert.ToBase64String(randomNumber);
+    }
+
+    /// <summary>
+    /// Kiểm tra token có hợp lệ không
+    /// Validate chữ ký, thời hạn, issuer, audience
+    /// </summary>
+    public async Task<bool> ValidateTokenAsync(string token)
+    {
+        if (string.IsNullOrEmpty(token))
+            return false;
+
+        try
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_secretKey);
+            
+            // Parameters để validate token
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = true,
+                ValidIssuer = _issuer,
+                ValidateAudience = true,
+                ValidAudience = _audience,
+                ValidateLifetime = true, // Check hết hạn chưa
+                ClockSkew = TimeSpan.Zero // Không cho phép lệch giờ
+            };
 
    
