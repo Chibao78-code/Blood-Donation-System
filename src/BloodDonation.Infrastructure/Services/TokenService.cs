@@ -51,5 +51,27 @@ public class TokenService : ITokenService
             {
                 claims.Add(new Claim("MedicalCenterId", user.MedicalCenterId.Value.ToString()));
             }
+            // Tạo token với thời hạn
+            var token = new JwtSecurityToken(
+                issuer: _issuer,
+                audience: _audience,
+                claims: claims,
+                notBefore: DateTime.UtcNow,
+                expires: DateTime.UtcNow.AddMinutes(_expirationMinutes),
+                signingCredentials: credentials
+            );
+
+            // Convert token thành string
+            var tokenHandler = new JwtSecurityTokenHandler();
+            return tokenHandler.WriteToken(token);
+        }
+        catch (Exception ex)
+        {
+            // Log lỗi nếu có vấn đề khi tạo token
+            // Trong production nên dùng ILogger
+            Console.WriteLine($"Lỗi khi tạo token: {ex.Message}");
+            throw new Exception("Không thể tạo access token", ex);
+        }
+    }
 
    
