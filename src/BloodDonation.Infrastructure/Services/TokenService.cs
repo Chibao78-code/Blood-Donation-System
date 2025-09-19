@@ -162,6 +162,44 @@ public class TokenService : ITokenService
             return false;
         }
     }
+        /// Lấy User ID từ token
+    /// Dùng để identify user từ token trong các requests
+    
+    public int? GetUserIdFromToken(string token)
+    {
+        if (string.IsNullOrEmpty(token))
+            return null;
+
+        try
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            
+            // Đọc token mà không validate (chỉ decode)
+            var jwtToken = tokenHandler.ReadJwtToken(token);
+            
+            // Lấy claim UserId
+            var userIdClaim = jwtToken.Claims.FirstOrDefault(x => x.Type == "UserId");
+            if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
+            {
+                return userId;
+            }
+
+            // Fallback sang NameIdentifier nếu không có custom claim
+            var nameIdClaim = jwtToken.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
+            if (nameIdClaim != null && int.TryParse(nameIdClaim.Value, out int nameId))
+            {
+                return nameId;
+            }
+
+            return null;
+        }
+        catch (Exception)
+        {
+            // Token format sai hoặc lỗi khác
+            return null;
+        }
+    }
+}
 
 
    
