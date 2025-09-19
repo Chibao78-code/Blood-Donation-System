@@ -26,5 +26,30 @@ public class TokenService : ITokenService
         _audience = _configuration["Jwt:Audience"] ?? "BloodDonationUsers";
         _expirationMinutes = int.Parse(_configuration["Jwt:ExpirationMinutes"] ?? "60");
     }
+     public string GenerateAccessToken(User user)
+    {
+        try
+        {
+            // Tạo security key từ secret key
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            // Danh sách claims - thông tin user trong token
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role.ToString()),
+                new Claim("UserId", user.Id.ToString()), // Custom claim cho dễ lấy
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()), // Token ID unique
+                new Claim(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64)
+            };
+
+            // Thêm Medical Center ID nếu user là staff của trung tâm
+            if (user.MedicalCenterId.HasValue)
+            {
+                claims.Add(new Claim("MedicalCenterId", user.MedicalCenterId.Value.ToString()));
+            }
 
    
