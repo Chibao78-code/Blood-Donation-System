@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj": {}
+    "C:\\GITHUB\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj": {}
   },
   "projects": {
-    "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj": {
+    "C:\\GITHUB\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj",
+        "projectUniqueName": "C:\\GITHUB\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj",
         "projectName": "BloodDonation.Domain",
-        "projectPath": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj",
+        "projectPath": "C:\\GITHUB\\Blood-Donation-System\\src\\BloodDonation.Domain\\BloodDonation.Domain.csproj",
         "packagesPath": "C:\\Users\\zzzdi\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\Blood-Donation-System\\src\\BloodDonation.Domain\\obj\\",
+        "outputPath": "C:\\GITHUB\\Blood-Donation-System\\src\\BloodDonation.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\zzzdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\zzzdi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
