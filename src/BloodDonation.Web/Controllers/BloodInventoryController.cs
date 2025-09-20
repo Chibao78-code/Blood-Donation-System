@@ -162,8 +162,4 @@ public class BloodInventoryController : Controller
         
         return RedirectToAction("Index");
     }
-
-
-
-
-    
+}
