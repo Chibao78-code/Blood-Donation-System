@@ -7,6 +7,9 @@ public class BloodType : BaseEntity
     // Tên đầy đủ nhóm máu: A+, A-, B+, B-, O+, O-, AB+, AB-
     public string Name { get; set; } = string.Empty;
     
+    // Alias property for backward compatibility - same as Name
+    public string Type => Name;
+    
     // Nhóm máu: A, B, AB, O
     public string Group { get; set; } = string.Empty;
     
