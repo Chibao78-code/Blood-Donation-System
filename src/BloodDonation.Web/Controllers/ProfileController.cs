@@ -45,7 +45,7 @@ public class ProfileController : Controller
             Email = user.Email,
             FullName = user.Donor?.FullName ?? "",
             DateOfBirth = user.Donor?.DateOfBirth,
-            Gender = user.Donor?.Gender,
+            Gender = user.Donor?.Gender.ToString(),
             PhoneNumber = user.Donor?.PhoneNumber,
             Address = user.Donor?.Address,
             IdentificationNumber = user.Donor?.IdentificationNumber,
@@ -100,7 +100,7 @@ public class ProfileController : Controller
         {
             FullName = user.Donor.FullName,
             DateOfBirth = user.Donor.DateOfBirth,
-            Gender = user.Donor.Gender,
+            Gender = user.Donor.Gender.ToString(),
             PhoneNumber = user.Donor.PhoneNumber,
             Address = user.Donor.Address,
             IdentificationNumber = user.Donor.IdentificationNumber,
@@ -138,7 +138,14 @@ public class ProfileController : Controller
         // update donor info
         user.Donor.FullName = model.FullName ?? "";
         user.Donor.DateOfBirth = model.DateOfBirth;
-        user.Donor.Gender = model.Gender;
+        // Parse Gender from string to enum
+        if (!string.IsNullOrEmpty(model.Gender))
+        {
+            if (Enum.TryParse<Domain.Enums.Gender>(model.Gender, out var gender))
+            {
+                user.Donor.Gender = gender;
+            }
+        }
         user.Donor.PhoneNumber = model.PhoneNumber;
         user.Donor.Address = model.Address;
         user.Donor.IdentificationNumber = model.IdentificationNumber;

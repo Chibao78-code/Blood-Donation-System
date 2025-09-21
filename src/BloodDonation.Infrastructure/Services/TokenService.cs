@@ -113,8 +113,9 @@ public class TokenService : ITokenService
                 ClockSkew = TimeSpan.Zero // Không cho phép lệch giờ
             };
             // Validate token
+            SecurityToken validatedToken = null;
             var principal = await Task.Run(() =>
-                tokenHandler.ValidateToken(token, validationParameters, out SecurityToken validatedToken)
+                tokenHandler.ValidateToken(token, validationParameters, out validatedToken)
             );
 
             // Kiểm tra algorithm phải là HmacSha256
@@ -137,34 +138,11 @@ public class TokenService : ITokenService
             return false;
         }
     }
-    // Validate token
-            var principal = await Task.Run(() =>
-                tokenHandler.ValidateToken(token, validationParameters, out SecurityToken validatedToken)
-            );
-
-            // Kiểm tra algorithm phải là HmacSha256
-            var jwtToken = validatedToken as JwtSecurityToken;
-            if (jwtToken == null || !jwtToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
-            {
-                return false;
-            }
-
-            return principal != null;
-        }
-        catch (SecurityTokenException)
-        {
-            // Token không hợp lệ hoặc hết hạn
-            return false;
-        }
-        catch (Exception)
-        {
-            // Lỗi khác
-            return false;
-        }
-    }
-        /// Lấy User ID từ token
-    /// Dùng để identify user từ token trong các requests
     
+    /// <summary>
+    /// Lấy User ID từ token
+    /// Dùng để identify user từ token trong các requests
+    /// </summary>
     public int? GetUserIdFromToken(string token)
     {
         if (string.IsNullOrEmpty(token))
