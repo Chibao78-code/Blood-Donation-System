@@ -179,5 +179,29 @@ public class AdminController : Controller
 
         return View(inventory);
     }
+    
+    // Quản lý trung tâm y tế
+    public async Task<IActionResult> MedicalCenters()
+    {
+        if (!IsAdmin())
+            return RedirectToAction("AccessDenied", "Account");
+
+        var centers = await _unitOfWork.MedicalCenters
+            .Query()
+            .OrderBy(m => m.Name)
+            .ToListAsync();
+
+        return View(centers);
+    }
+
+    // Thêm trung tâm y tế mới
+    [HttpGet]
+    public IActionResult CreateMedicalCenter()
+    {
+        if (!IsAdmin())
+            return RedirectToAction("AccessDenied", "Account");
+
+        return View();
+    }
 
        
