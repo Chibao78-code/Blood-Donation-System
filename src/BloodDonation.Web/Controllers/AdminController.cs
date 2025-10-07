@@ -90,5 +90,54 @@ public class AdminController : Controller
 
         return View(users);
     }
+        // Quản lý lịch hẹn - xem tất cả
+    public async Task<IActionResult> Appointments(string status = "all", int page = 1)
+    {
+        if (!IsAdmin())
+            return RedirectToAction("AccessDenied", "Account");
+
+        var query = _unitOfWork.DonationAppointments
+            .Query()
+            .Include(a => a.Donor)
+            .Include(a => a.MedicalCenter)
+            .Include(a => a.BloodType);
+
+        // Lọc theo status nếu có
+        if (status != "all" && Enum.TryParse<Domain.Enums.AppointmentStatus>(status, true, out var statusEnum))
+        {
+            query = query.Where(a => a.Status == statusEnum);
+        }
+
+        var appointments = await query
+            .OrderByDescending(a => a.AppointmentDate)
+            .Take(50) // Lấy 50 cái gần nhất thôi
+            .ToListAsync();
+
+        ViewBag.CurrentStatus = status;
+        
+        return View(appointments);
+    }
+
+    // Duyệt lịch hẹn (chuyển từ Pending sang Confirmed)
+    [HttpPost]
+    public async Task<IActionResult> ApproveAppointment(int id)
+    {
+        if (!IsAdmin())
+            return Json(new { success = false, message = "Không có quyền" });
+
+        var appointment = await _unitOfWork.DonationAppointments.GetByIdAsync(id);
+        if (appointment == null)
+            return Json(new { success = false, message = "Không tìm thấy lịch hẹn" });
+
+        appointment.Status = Domain.Enums.AppointmentStatus.Confirmed;
+        appointment.UpdatedAt = DateTime.UtcNow;
+
+        await _unitOfWork.DonationAppointments.UpdateAsync(appointment);
+        await _unitOfWork.SaveChangesAsync();
+
+        _logger.LogInformation($"Appointment {id} approved by admin");
+
+        return Json(new { success = true, message = "Đã duyệt lịch hẹn" });
+    }
 
        
