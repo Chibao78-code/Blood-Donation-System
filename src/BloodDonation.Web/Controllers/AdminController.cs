@@ -139,5 +139,45 @@ public class AdminController : Controller
 
         return Json(new { success = true, message = "Đã duyệt lịch hẹn" });
     }
+        // Quản lý kho máu
+    public async Task<IActionResult> BloodInventory(int? bloodTypeId = null)
+    {
+        if (!IsAdmin())
+            return RedirectToAction("AccessDenied", "Account");
+
+        var query = _unitOfWork.BloodInventories
+            .Query()
+            .Include(b => b.BloodType)
+            .Include(b => b.MedicalCenter);
+
+        if (bloodTypeId.HasValue)
+        {
+            query = query.Where(b => b.BloodTypeId == bloodTypeId.Value);
+        }
+
+        var inventory = await query
+            .OrderByDescending(b => b.CollectionDate)
+            .ToListAsync();
+
+        // Lấy danh sách blood types để filter
+        ViewBag.BloodTypes = await _unitOfWork.BloodTypes.GetAllAsync();
+        ViewBag.SelectedBloodType = bloodTypeId;
+
+        // Thống kê theo nhóm máu
+        var stats = await _unitOfWork.BloodInventories
+            .Query()
+            .Where(b => b.Status == Domain.Enums.BloodInventoryStatus.Available)
+            .GroupBy(b => b.BloodType.Name)
+            .Select(g => new { 
+                BloodType = g.Key, 
+                Quantity = g.Sum(b => b.Quantity),
+                Count = g.Count()
+            })
+            .ToListAsync();
+
+        ViewBag.Stats = stats;
+
+        return View(inventory);
+    }
 
        
