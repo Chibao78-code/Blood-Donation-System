@@ -36,5 +36,30 @@ public class AdminController : Controller
             TempData["Error"] = "Bạn không có quyền truy cập trang này";
             return RedirectToAction("Index", "Home");
         }
+         // Lấy thống kê tổng quan
+        var totalDonors = await _unitOfWork.Donors.Query().CountAsync();
+        var totalAppointments = await _unitOfWork.DonationAppointments.Query().CountAsync();
+        var pendingAppointments = await _unitOfWork.DonationAppointments
+            .Query()
+            .Where(a => a.Status == Domain.Enums.AppointmentStatus.Pending)
+            .CountAsync();
+
+        // Lấy số lượng túi máu trong kho
+        var totalBloodUnits = await _unitOfWork.BloodInventories
+            .Query()
+            .Where(b => b.Status == Domain.Enums.BloodInventoryStatus.Available)
+            .SumAsync(b => (decimal?)b.Quantity) ?? 0;
+
+        // Lấy số lượng yêu cầu máu đang chờ
+        var pendingRequests = await _unitOfWork.BloodRequests
+            .Query()
+            .Where(r => r.Status == "Pending")
+            .CountAsync();
+
+        ViewBag.TotalDonors = totalDonors;
+        ViewBag.TotalAppointments = totalAppointments;
+        ViewBag.PendingAppointments = pendingAppointments;
+        ViewBag.TotalBloodUnits = totalBloodUnits;
+        ViewBag.PendingRequests = pendingRequests;
 
        
