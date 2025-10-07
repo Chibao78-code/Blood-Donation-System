@@ -61,5 +61,34 @@ public class AdminController : Controller
         ViewBag.PendingAppointments = pendingAppointments;
         ViewBag.TotalBloodUnits = totalBloodUnits;
         ViewBag.PendingRequests = pendingRequests;
+        
+        // Lấy danh sách appointment sắp tới
+        var upcomingAppointments = await _donationService.GetUpcomingAppointmentsAsync();
+        
+        return View(upcomingAppointments);
+    }
+
+    // Quản lý người dùng
+    public async Task<IActionResult> Users(int page = 1, int pageSize = 20)
+    {
+        if (!IsAdmin()) 
+            return RedirectToAction("AccessDenied", "Account");
+
+        var users = await _unitOfWork.Users
+            .Query()
+            .Include(u => u.Donor)
+            .OrderByDescending(u => u.CreatedAt)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        var totalUsers = await _unitOfWork.Users.Query().CountAsync();
+        
+        ViewBag.CurrentPage = page;
+        ViewBag.TotalPages = (int)Math.Ceiling(totalUsers / (double)pageSize);
+        ViewBag.TotalUsers = totalUsers;
+
+        return View(users);
+    }
 
        
