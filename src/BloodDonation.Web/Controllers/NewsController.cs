@@ -38,5 +38,53 @@ public class NewsController : Controller
 
         return View(news);
     }
+        // Chi tiết bài viết
+    public async Task<IActionResult> Details(int id)
+    {
+        var news = await _unitOfWork.News.GetByIdAsync(id);
+
+        if (news == null || !news.IsPublished)
+        {
+            TempData["Error"] = "Không tìm thấy bài viết này";
+            return RedirectToAction("Index");
+        }
+
+        // Tăng view count
+        news.ViewCount++;
+        await _unitOfWork.News.UpdateAsync(news);
+        await _unitOfWork.SaveChangesAsync();
+
+        // Lấy các bài viết liên quan (cùng type)
+        var relatedNews = await _unitOfWork.News
+            .Query()
+            .Where(n => n.IsPublished && n.Id != id && n.Type == news.Type)
+            .OrderByDescending(n => n.PublishedAt)
+            .Take(5)
+            .ToListAsync();
+
+        ViewBag.RelatedNews = relatedNews;
+
+        return View(news);
+    }
+
+    // Admin: Quản lý tin tức
+    public async Task<IActionResult> Manage()
+    {
+        // Check quyền admin
+        var role = HttpContext.Session.GetString("Role");
+        if (role?.ToLower() != "admin")
+        {
+            TempData["Error"] = "Bạn không có quyền truy cập";
+            return RedirectToAction("Index", "Home");
+        }
+
+        // Lấy tất cả tin tức (kể cả chưa publish)
+        var news = await _unitOfWork.News
+            .Query()
+            .OrderByDescending(n => n.CreatedAt)
+            .ToListAsync();
+
+        return View(news);
+    }
 
     
