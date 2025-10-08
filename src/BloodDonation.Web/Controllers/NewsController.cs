@@ -134,5 +134,76 @@ public class NewsController : Controller
             return View(model);
         }
     }
+    
+
+
+    // Sửa bài viết
+    [HttpGet]
+    public async Task<IActionResult> Edit(int id)
+    {
+        var role = HttpContext.Session.GetString("Role");
+        if (role?.ToLower() != "admin")
+            return RedirectToAction("AccessDenied", "Account");
+
+        var news = await _unitOfWork.News.GetByIdAsync(id);
+        if (news == null)
+        {
+            TempData["Error"] = "Không tìm thấy bài viết";
+            return RedirectToAction("Manage");
+        }
+
+        return View(news);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(int id, News model)
+    {
+        var role = HttpContext.Session.GetString("Role");
+        if (role?.ToLower() != "admin")
+            return RedirectToAction("AccessDenied", "Account");
+
+        if (id != model.Id)
+            return NotFound();
+
+        if (!ModelState.IsValid)
+            return View(model);
+
+        try
+        {
+            var existingNews = await _unitOfWork.News.GetByIdAsync(id);
+            if (existingNews == null)
+            {
+                TempData["Error"] = "Không tìm thấy bài viết";
+                return RedirectToAction("Manage");
+            }
+
+            // Cập nhật các field
+            existingNews.Title = model.Title;
+            existingNews.Content = model.Content;
+            existingNews.Summary = model.Summary;
+            existingNews.ImageUrl = model.ImageUrl;
+            existingNews.Type = model.Type;
+
+            // Nếu chuyển từ unpublish -> publish thì set PublishedAt
+            if (model.IsPublished && !existingNews.IsPublished)
+            {
+                existingNews.PublishedAt = DateTime.UtcNow;
+            }
+            existingNews.IsPublished = model.IsPublished;
+
+            await _unitOfWork.News.UpdateAsync(existingNews);
+            await _unitOfWork.SaveChangesAsync();
+
+            TempData["Success"] = "Đã cập nhật bài viết";
+            return RedirectToAction("Manage");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error updating news");
+            ModelState.AddModelError("", "Có lỗi xảy ra: " + ex.Message);
+            return View(model);
+        }
+    }
 
     
