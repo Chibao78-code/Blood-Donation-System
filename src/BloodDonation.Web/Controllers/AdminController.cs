@@ -227,5 +227,48 @@ public class AdminController : Controller
             return View(model);
         }
     }
+     // Báo cáo thống kê
+    public async Task<IActionResult> Reports()
+    {
+        if (!IsAdmin())
+            return RedirectToAction("AccessDenied", "Account");
+
+        // Thống kê theo tháng
+        var currentMonth = DateTime.Now.Month;
+        var currentYear = DateTime.Now.Year;
+
+        var monthlyDonations = await _unitOfWork.DonationAppointments
+            .Query()
+            .Where(a => a.Status == Domain.Enums.AppointmentStatus.Completed 
+                && a.CompletedAt.HasValue
+                && a.CompletedAt.Value.Year == currentYear
+                && a.CompletedAt.Value.Month == currentMonth)
+            .CountAsync();
+
+        var monthlyBloodCollected = await _unitOfWork.DonationAppointments
+            .Query()
+            .Where(a => a.Status == Domain.Enums.AppointmentStatus.Completed 
+                && a.CompletedAt.HasValue
+                && a.CompletedAt.Value.Year == currentYear
+                && a.CompletedAt.Value.Month == currentMonth)
+            .SumAsync(a => (decimal?)a.QuantityDonated) ?? 0;
+
+        ViewBag.MonthlyDonations = monthlyDonations;
+        ViewBag.MonthlyBloodCollected = monthlyBloodCollected;
+        ViewBag.CurrentMonth = $"Tháng {currentMonth}/{currentYear}";
+
+        // Top donors
+        var topDonors = await _unitOfWork.Donors
+            .Query()
+            .OrderByDescending(d => d.TotalDonations)
+            .Take(10)
+            .ToListAsync();
+
+        ViewBag.TopDonors = topDonors;
+
+        return View();
+    }
+}
+
 
        
