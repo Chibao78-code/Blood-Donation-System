@@ -203,5 +203,29 @@ public class AdminController : Controller
 
         return View();
     }
+        [HttpPost]
+    public async Task<IActionResult> CreateMedicalCenter(Domain.Entities.MedicalCenter model)
+    {
+        if (!IsAdmin())
+            return RedirectToAction("AccessDenied", "Account");
+
+        if (!ModelState.IsValid)
+            return View(model);
+
+        try
+        {
+            await _unitOfWork.MedicalCenters.AddAsync(model);
+            await _unitOfWork.SaveChangesAsync();
+
+            TempData["Success"] = "Đã thêm trung tâm y tế mới";
+            return RedirectToAction("MedicalCenters");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error creating medical center");
+            TempData["Error"] = "Có lỗi xảy ra: " + ex.Message;
+            return View(model);
+        }
+    }
 
        
