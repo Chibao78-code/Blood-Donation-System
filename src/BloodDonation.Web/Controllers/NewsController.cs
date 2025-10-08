@@ -86,5 +86,53 @@ public class NewsController : Controller
 
         return View(news);
     }
+    
+    // Tạo bài viết mới
+    [HttpGet]
+    public IActionResult Create()
+    {
+        var role = HttpContext.Session.GetString("Role");
+        if (role?.ToLower() != "admin")
+            return RedirectToAction("AccessDenied", "Account");
+
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(News model)
+    {
+        var role = HttpContext.Session.GetString("Role");
+        if (role?.ToLower() != "admin")
+            return RedirectToAction("AccessDenied", "Account");
+
+        if (!ModelState.IsValid)
+            return View(model);
+
+        try
+        {
+            // Set author từ session
+            var username = HttpContext.Session.GetString("Username");
+            model.Author = username ?? "Admin";
+
+            // Nếu đánh dấu publish ngay
+            if (model.IsPublished)
+            {
+                model.PublishedAt = DateTime.UtcNow;
+            }
+
+            await _unitOfWork.News.AddAsync(model);
+            await _unitOfWork.SaveChangesAsync();
+
+            TempData["Success"] = "Đã tạo bài viết mới";
+            return RedirectToAction("Manage");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error creating news");
+            ModelState.AddModelError("", "Có lỗi xảy ra: " + ex.Message);
+            return View(model);
+        }
+    }
 
     
