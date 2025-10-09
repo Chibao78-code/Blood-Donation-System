@@ -205,5 +205,30 @@ public class NewsController : Controller
             return View(model);
         }
     }
+        // Xóa bài viết (soft delete)
+    [HttpPost]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var role = HttpContext.Session.GetString("Role");
+        if (role?.ToLower() != "admin")
+            return Json(new { success = false, message = "Không có quyền" });
+
+        try
+        {
+            var news = await _unitOfWork.News.GetByIdAsync(id);
+            if (news == null)
+                return Json(new { success = false, message = "Không tìm thấy bài viết" });
+
+            await _unitOfWork.News.DeleteAsync(news);
+            await _unitOfWork.SaveChangesAsync();
+
+            return Json(new { success = true, message = "Đã xóa bài viết" });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error deleting news");
+            return Json(new { success = false, message = "Có lỗi xảy ra" });
+        }
+    }
 
     
