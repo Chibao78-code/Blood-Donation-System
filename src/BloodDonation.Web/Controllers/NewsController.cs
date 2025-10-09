@@ -245,6 +245,25 @@ public class NewsController : Controller
                 return Json(new { success = false, message = "Không tìm thấy bài viết" });
 
             news.IsPublished = !news.IsPublished;
+             if (news.IsPublished && !news.PublishedAt.HasValue)
+            {
+                news.PublishedAt = DateTime.UtcNow;
+            }
+
+            await _unitOfWork.News.UpdateAsync(news);
+            await _unitOfWork.SaveChangesAsync();
+
+            var status = news.IsPublished ? "published" : "unpublished";
+            return Json(new { success = true, message = $"Đã {status}", isPublished = news.IsPublished });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error toggling publish status");
+            return Json(new { success = false, message = "Có lỗi xảy ra" });
+        }
+    }
+}
+
 
 
     
