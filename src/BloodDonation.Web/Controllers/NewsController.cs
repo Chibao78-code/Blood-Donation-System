@@ -230,5 +230,21 @@ public class NewsController : Controller
             return Json(new { success = false, message = "Có lỗi xảy ra" });
         }
     }
+    // Toggle publish status
+    [HttpPost]
+    public async Task<IActionResult> TogglePublish(int id)
+    {
+        var role = HttpContext.Session.GetString("Role");
+        if (role?.ToLower() != "admin")
+            return Json(new { success = false, message = "Không có quyền" });
+
+        try
+        {
+            var news = await _unitOfWork.News.GetByIdAsync(id);
+            if (news == null)
+                return Json(new { success = false, message = "Không tìm thấy bài viết" });
+
+            news.IsPublished = !news.IsPublished;
+
 
     
